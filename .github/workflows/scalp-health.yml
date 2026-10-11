@@ -1,4 +1,4 @@
-name: Verify TALON SCALP live feed
+name: Verify TALON PRO live dashboard
 on:
   push:
     branches: [main]
@@ -11,26 +11,45 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - name: Verify service and streaming quotes
+      - name: Verify streaming feed, interactive charts, maker shadow
         run: |
           python - <<'PY'
           import json, time, urllib.request
-          url='https://talon-scalp-stream-production.up.railway.app'
-          for i in range(9):
+          base='https://talon-scalp-stream-production.up.railway.app'
+          def fetch(path):
+              with urllib.request.urlopen(base+path, timeout=12) as res:
+                  return res.read().decode('utf-8')
+          for i in range(12):
               try:
-                  with urllib.request.urlopen(url+'/api/status', timeout=12) as resp:
-                      j=json.load(resp)
-                  print('Mode:',j.get('mode'),'Status:',j.get('status'))
-                  print('Feed:',j.get('feed'),'Active markets:',j.get('active_markets'))
-                  print('Quote events:',j.get('seen'),'Virtual trades:',len(j.get('trades',[])))
-                  print('Virtual equity:',j.get('equity'),'Net P&L:',j.get('pnl'))
+                  j=json.loads(fetch('/api/status'))
+                  k=json.loads(fetch('/api/history?symbol=BTC%2FUSD&range=5m'))
+                  html=fetch('/')
                   assert j.get('mode')=='PAPER ONLY'
-                  assert j.get('active_markets',0)>0, 'No fresh market quotes'
-                  assert j.get('seen',0)>0, 'No price messages processed'
-                  print('PASS: live Kraken quotes received by Railway simulator')
+                  assert j.get('feed')=='CONNECTED', j.get('feed')
+                  assert j.get('active_markets',0)>0
+                  assert j.get('seen',0)>0
+                  assert j.get('maker_shadow',{}).get('mode')=='PAPER ONLY MAKER SHADOW'
+                  assert 'BTC/USD' in j.get('sparklines',{})
+                  assert 'equity_sparkline' in j
+                  assert j.get('stats') is not None
+                  assert 'filter_reasons' in j
+                  assert k.get('mode')=='PAPER ONLY'
+                  assert isinstance(k.get('price'),list)
+                  assert isinstance(k.get('equity'),list)
+                  assert 'data-open="equity"' in html
+                  assert 'makerEquity' in html
+                  assert 'refreshDetail' in html
+                  print('PASS: TALON PRO interactive dashboard live')
+                  print('Feed:',j['feed'],'Fresh markets:',j['active_markets'])
+                  print('Updates:',j['seen'],'Market samples:',sum(len(v) for v in j['sparklines'].values()))
+                  print('Maker quotes:',j['maker_shadow']['counts']['quoted'])
+                  print('Maker fills:',j['maker_shadow']['counts']['filled'])
+                  print('Maker trades:',len(j['maker_shadow']['trades']))
+                  print('Taker trades:',len(j['trades']))
+                  print('Historical 5m samples:',len(k['price']))
                   break
               except Exception as e:
-                  print('Attempt',i+1,'failed:',str(e))
-                  if i==8: raise
+                  print('Attempt',i+1,'not ready:',repr(e))
+                  if i==11: raise
                   time.sleep(10)
           PY
