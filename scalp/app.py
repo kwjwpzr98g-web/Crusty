@@ -10,6 +10,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from aiohttp import ClientSession, WSMsgType, web
+from maker import MakerPaper
 
 SYMS=["BTC/USD","ETH/USD","SOL/USD","BNB/USD","HYPE/USD"]
 ENTRY_FEE=0.008   # Entry-tier Kraken Pro taker fee, adjust only after verification.
@@ -257,6 +258,7 @@ class PaperScalper:
                 "timestamp":utc()}
 
 BOT=PaperScalper()
+MAKER=MakerPaper()
 async def stream():
     while True:
         try:
@@ -280,6 +282,7 @@ async def stream():
                                     try:
                                         sym=quote["symbol"];bid=float(quote["bid"]);ask=float(quote["ask"])
                                         BOT.tick(sym,bid,ask)
+                                        MAKER.observe(sym,bid,ask)
                                     except (ValueError,TypeError,KeyError):pass
                         elif msg.type in (WSMsgType.ERROR,WSMsgType.CLOSE,WSMsgType.CLOSED):break
         except asyncio.CancelledError:
@@ -288,12 +291,14 @@ async def stream():
             BOT.log("Feed reconnect: "+str(e)[:100])
         BOT.connection="DISCONNECTED"
         BOT.save()
+        MAKER.save()
         await asyncio.sleep(5)
 
 async def persist():
     while True:
         await asyncio.sleep(15)
         BOT.save()
+        MAKER.save()
 
 async def api_history(request):
     try:
@@ -304,7 +309,11 @@ async def api_history(request):
         raise web.HTTPBadRequest(text=str(error))
 
 async def api_status(request):
-    return web.json_response(BOT.status(),headers={"Cache-Control":"no-store"})
+    result=BOT.status()
+    result["maker_shadow"]=MAKER.status()
+    result["sparklines"]={sym:list(BOT.price_history[sym])[-110:] for sym in SYMS}
+    result["equity_sparkline"]=list(BOT.equity_history)[-150:]
+    return web.json_response(result,headers={"Cache-Control":"no-store"})
 async def health(request):
     # HTTP ready does not imply market feed healthy; API exposes feed separately.
     return web.json_response({"service":"talon-scalp","alive":True,
@@ -318,6 +327,7 @@ async def shutdown(app):
     for worker in app["workers"]:worker.cancel()
     await asyncio.gather(*app["workers"],return_exceptions=True)
     BOT.save()
+    MAKER.save()
 
 app=web.Application()
 app.router.add_get("/",index)
