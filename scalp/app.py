@@ -62,6 +62,10 @@ class PaperScalper:
         self.last_exit=0.0
         self.quotes={}
         self.points={sym:deque(maxlen=300) for sym in SYMS}
+        # Downsampled, bounded time series for drill-down plots. Persist across redeploys.
+        self.price_history={sym:deque(maxlen=9000) for sym in SYMS}
+        self.equity_history=deque(maxlen=6000)
+        self.filter_reasons={"warmup":0,"fees_exceed_move":0,"spread_too_wide":0,"cooldown":0,"risk_lock":0,"paused":0,"already_in_trade":0,"signal_qualified":0}
         self.connection="CONNECTING"
         self.connected_at=None
         self.seen=0
@@ -75,11 +79,19 @@ class PaperScalper:
         for key in ("cash","equity","peak","day_start","day","position","trades",
                     "events","locked","paused","last_exit","seen","rejected"):
             if key in saved: setattr(self,key,saved[key])
+        for sym, samples in saved.get("price_history",{}).items():
+            if sym in self.price_history and isinstance(samples,list):
+                self.price_history[sym]=deque(samples[-9000:],maxlen=9000)
+        self.equity_history=deque(saved.get("equity_history",[])[-6000:],maxlen=6000)
+        self.filter_reasons.update({key:int(max(0,value)) for key,value in saved.get("filter_reasons",{}).items() if key in self.filter_reasons and isinstance(value,(int,float))})
 
     def save(self):
         data={k:getattr(self,k) for k in ("cash","equity","peak","day_start","day",
               "position","trades","events","locked","paused","last_exit","seen","rejected")}
         data["mode"]="PAPER ONLY"
+        data["price_history"]={s:list(h) for s,h in self.price_history.items()}
+        data["equity_history"]=list(self.equity_history)
+        data["filter_reasons"]=self.filter_reasons
         self.path.parent.mkdir(parents=True,exist_ok=True)
         fd,tmp=tempfile.mkstemp(dir=str(self.path.parent),prefix=".scalp-")
         try:
@@ -143,6 +155,9 @@ class PaperScalper:
                           "spread_bps":round((ask/bid-1)*10000,2)}
         hist=self.points[sym]
         if not hist or now-hist[-1][0]>=0.8: hist.append((now,(bid+ask)/2))
+        prices=self.price_history[sym]
+        if not prices or now-prices[-1][0]>=10:
+            prices.append([round(now,1),round((bid+ask)/2,9),round(bid,9),round(ask,9)])
         self.seen+=1
         if self.position and self.position["symbol"]==sym:
             p=self.position
@@ -164,17 +179,53 @@ class PaperScalper:
             self.log("Daily drawdown circuit breaker triggered")
             if self.position and self.position["symbol"]==sym:
                 self.close(self.quotes[sym],"RISK LOCK")
-        if self.position or self.locked or self.paused or now-self.last_exit<COOLDOWN:return
+        # Sample net liquidation equity even when waiting or in a position.
+        if not self.equity_history or now-self.equity_history[-1][0]>=15:
+            self.equity_history.append([round(now,1),round(self.equity,4)])
+        if self.position:
+            self.filter_reasons["already_in_trade"]+=1;return
+        if self.locked:
+            self.filter_reasons["risk_lock"]+=1;return
+        if self.paused:
+            self.filter_reasons["paused"]+=1;return
+        if now-self.last_exit<COOLDOWN:
+            self.filter_reasons["cooldown"]+=1;return
         self.rejected+=1
-        if len(hist)<20:return
+        if len(hist)<20:
+            self.filter_reasons["warmup"]+=1;return
         anchor=next(((t,mid) for t,mid in hist if t>=now-ENTRY_LOOKBACK),None)
-        if not anchor or now-anchor[0]<ENTRY_LOOKBACK*0.6:return
+        if not anchor or now-anchor[0]<ENTRY_LOOKBACK*0.6:
+            self.filter_reasons["warmup"]+=1;return
         change=(hist[-1][1]/anchor[1]-1)
         hurdle=roundtrip_hurdle(bid,ask)
         # Demand recent positive move above *entire* modeled cost hurdle.
         # Often rejects all signals at retail taker fees; this is intentional.
-        if change > hurdle and change<0.08 and self.quotes[sym]["spread_bps"]<20:
+        if self.quotes[sym]["spread_bps"]>=20:
+            self.filter_reasons["spread_too_wide"]+=1
+        elif change>hurdle and change<0.08:
+            self.filter_reasons["signal_qualified"]+=1
             self.enter(sym,self.quotes[sym])
+        else:
+            self.filter_reasons["fees_exceed_move"]+=1
+
+    def series(self,symbol="BTC/USD",window="1h"):
+        durations={"5m":300,"15m":900,"1h":3600,"4h":14400,"24h":86400}
+        if symbol not in SYMS: raise ValueError("Unknown symbol")
+        if window not in durations: raise ValueError("Invalid range")
+        cutoff=time.time()-durations[window]
+        def bounded(data):
+            filtered=[point for point in data if point[0]>=cutoff]
+            if len(filtered)<=400:return filtered
+            step=math.ceil(len(filtered)/399)
+            out=filtered[::step]
+            if out[-1]!=filtered[-1]:out.append(filtered[-1])
+            return out
+        return {"symbol":symbol,"range":window,"price":bounded(self.price_history[symbol]),
+                "equity":bounded(self.equity_history),
+                "trades":[trade for trade in self.trades if
+                          (trade["symbol"]==symbol and
+                           trade.get("exited","")>=utc(cutoff))][:50],
+                "timestamp":utc(),"mode":"PAPER ONLY"}
 
     def status(self):
         now=time.time()
@@ -193,6 +244,14 @@ class PaperScalper:
                             {"fresh":now-q["t"]<DATA_TIMEOUT,
                              "fee_hurdle_bps":round(roundtrip_hurdle(q["bid"],q["ask"])*10000,1)})
                            for s,q in self.quotes.items()},
+                "filter_reasons":self.filter_reasons,
+                "stats":{"wins":sum(t["pnl"]>0 for t in self.trades),
+                         "losses":sum(t["pnl"]<0 for t in self.trades),
+                         "gross":round(sum(t["gross"] for t in self.trades),3),
+                         "fees":round(sum(t["fees"] for t in self.trades),3),
+                         "net":round(sum(t["pnl"] for t in self.trades),3),
+                         "avg_win":round(sum(t["pnl"] for t in self.trades if t["pnl"]>0)/max(1,sum(t["pnl"]>0 for t in self.trades)),3),
+                         "avg_loss":round(sum(t["pnl"] for t in self.trades if t["pnl"]<0)/max(1,sum(t["pnl"]<0 for t in self.trades)),3)},
                 "fee_bps_per_side":ENTRY_FEE*10000,
                 "target_net_bps":TARGET_NET*10000,
                 "timestamp":utc()}
@@ -236,6 +295,14 @@ async def persist():
         await asyncio.sleep(15)
         BOT.save()
 
+async def api_history(request):
+    try:
+        return web.json_response(BOT.series(
+            request.query.get("symbol","BTC/USD"),request.query.get("range","1h")),
+            headers={"Cache-Control":"no-store"})
+    except ValueError as error:
+        raise web.HTTPBadRequest(text=str(error))
+
 async def api_status(request):
     return web.json_response(BOT.status(),headers={"Cache-Control":"no-store"})
 async def health(request):
@@ -255,6 +322,7 @@ async def shutdown(app):
 app=web.Application()
 app.router.add_get("/",index)
 app.router.add_get("/api/status",api_status)
+app.router.add_get("/api/history",api_history)
 app.router.add_get("/health",health)
 app.on_startup.append(startup)
 app.on_cleanup.append(shutdown)
