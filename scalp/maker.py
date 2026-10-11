@@ -15,16 +15,16 @@ import time
 MAKER_FEE = 0.004     # Kraken Pro Tier 1, 40 basis points EACH side
 TAKER_FEE = 0.008     # Forced exit modeled at 80 bps
 NET_TARGET = 0.0008   # 8 bps intended net return after two maker fees
-MIN_MOMENTUM_BPS = 3.5
-MAX_SPREAD_BPS = 8.0
-ORDER_TTL = 18.0
+MIN_MOMENTUM_BPS = 1.2
+MAX_SPREAD_BPS = 10.0
+ORDER_TTL = 12.0
 MAX_HOLD = 150.0
 MIN_QUEUE_WAIT = 2.0
 THROUGH_BPS = 1.0
-COOLDOWN = 8.0
+COOLDOWN = 5.0
 STOP_BPS = 28.0
 NOTIONAL = 100.0
-MAX_NEW_ORDERS_DAY = 100
+MAX_NEW_ORDERS_DAY = 160
 MAX_LOSS_DAY = 100.0
 SYMS = ["BTC/USD", "ETH/USD", "SOL/USD", "BNB/USD", "HYPE/USD"]
 
