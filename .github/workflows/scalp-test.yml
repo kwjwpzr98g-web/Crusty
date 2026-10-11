@@ -17,6 +17,16 @@ jobs:
         with:
           python-version: '3.11'
       - run: python -m pip install -r scalp/requirements.txt
-      - run: python -m py_compile scalp/app.py
+      - run: python -m py_compile scalp/app.py scalp/maker.py
+      - name: Check dashboard JavaScript syntax
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          html=Path('scalp/index.html').read_text()
+          start=html.index('<script>')+len('<script>')
+          end=html.index('</script>',start)
+          Path('/tmp/talon-dashboard.js').write_text(html[start:end])
+          PY
+          node --check /tmp/talon-dashboard.js
       - name: Run paper simulator tests
         run: cd scalp && python -m unittest discover -p 'test_*.py' -v
