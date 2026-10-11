@@ -1,0 +1,18 @@
+{
+  "name": "TALON Paper Trader",
+  "short_name": "TALON",
+  "description": "Paper-only hourly cryptocurrency strategy dashboard",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0e151d",
+  "theme_color": "#0e151d",
+  "icons": [
+    {
+      "src": "./talon-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
