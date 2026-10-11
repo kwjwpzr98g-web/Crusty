@@ -1,0 +1,83 @@
+{
+  "name": "TALON",
+  "mode": "PAPER ONLY",
+  "status": "SCANNING",
+  "updated": "2026-10-11T20:23:47Z",
+  "last_data": "2026-10-11T20:00:00Z",
+  "equity": 10000.0,
+  "pnl": 0.0,
+  "cash": 10000.0,
+  "drawdown": 0.0,
+  "completed": 0,
+  "position": null,
+  "markets": {
+    "BTC": {
+      "status": "READY",
+      "price": 83576.3,
+      "candle": "2026-10-11T20:00:00Z",
+      "signal": "WAIT"
+    },
+    "ETH": {
+      "status": "READY",
+      "price": 2534.1,
+      "candle": "2026-10-11T20:00:00Z",
+      "signal": "WAIT"
+    },
+    "SOL": {
+      "status": "READY",
+      "price": 111.24,
+      "candle": "2026-10-11T20:00:00Z",
+      "signal": "WAIT"
+    },
+    "BNB": {
+      "status": "READY",
+      "price": 752.28,
+      "candle": "2026-10-11T20:00:00Z",
+      "signal": "WAIT"
+    },
+    "HYPE": {
+      "status": "READY",
+      "price": 86.45,
+      "candle": "2026-10-11T20:00:00Z",
+      "signal": "WAIT"
+    }
+  },
+  "trades": [],
+  "history": [
+    {
+      "t": 1791745200,
+      "equity": 10000.0
+    }
+  ],
+  "errors": {},
+  "events": [
+    {
+      "at": "2026-10-11T20:00:00Z",
+      "kind": "START",
+      "message": "Initialized; no hindsight trades"
+    }
+  ],
+  "lock_reason": null,
+  "paused": false,
+  "settings": {
+    "symbols": [
+      "BTC",
+      "ETH",
+      "SOL",
+      "BNB",
+      "HYPE"
+    ],
+    "starting_equity": 10000,
+    "risk_per_trade": 0.0075,
+    "position_cap": 0.2,
+    "breakout_bars": 20,
+    "volume_multiple": 1.35,
+    "stop_atr": 1.8,
+    "reward_risk": 2,
+    "fee": 0.004,
+    "slippage": 0.001,
+    "daily_loss_limit": 0.05,
+    "total_drawdown_limit": 0.1,
+    "max_hold_bars": 36
+  }
+}
