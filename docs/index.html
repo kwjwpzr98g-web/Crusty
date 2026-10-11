@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#101820"><title>TALON | Paper Trading</title>
+<style>
+:root{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#e9f0f5;background:#0e151d}*{box-sizing:border-box}body{margin:0;padding:0 0 45px;background:radial-gradient(ellipse at 80% -10%,#1c3340 0%,#0e151d 54%)}main{max-width:960px;margin:auto;padding:24px 17px}.top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #263440;padding-bottom:22px}.logo{font-size:27px;font-weight:900;letter-spacing:4px}.logo span{color:#7fd6c0}.sub{color:#8296a6;font-size:12px;letter-spacing:.04em}.tag{border:1px solid #557469;color:#9fe5d1;border-radius:999px;padding:6px 10px;font-size:10px;font-weight:700}.warning{margin-top:15px;border:1px solid #5f4f37;border-radius:10px;background:#2b261d;color:#e8d7af;padding:12px;font-size:12px}.wrap{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}.card{border:1px solid #283640;background:#17212b;border-radius:15px;padding:17px;min-width:0}.card.main{grid-column:1 / -1;background:linear-gradient(145deg,#192d37,#16212a)}h2{font-size:12px;font-weight:600;color:#99afbe;margin:0 0 12px;letter-spacing:.1em;text-transform:uppercase}.money{font-size:43px;font-weight:760;letter-spacing:-2px;font-variant-numeric:tabular-nums}.metric{font-size:25px;font-weight:700;font-variant-numeric:tabular-nums}.green{color:#85dbc1}.red{color:#f39b95}.muted{color:#8fa1af;font-size:12px}#chart{width:100%;height:145px;margin-top:8px}svg{display:block;width:100%;height:100%}table{width:100%;border-collapse:collapse;text-align:left;font-size:13px}th{color:#8c9daa;font-size:11px;font-weight:600;text-transform:uppercase}td,th{padding:10px 3px;border-bottom:1px solid #26343f}a{color:#9de4d3;text-decoration:none}.full{grid-column:1/-1}.actions{margin:18px 0;display:flex;gap:12px;flex-wrap:wrap}.button{background:#2a4950;border:1px solid #466b6a;padding:12px 18px;border-radius:10px;color:#d3f8eb;font-size:13px;font-weight:700}.button.secondary{background:#1b2b35}.note{font-size:11px;color:#8a9dab;line-height:1.6}#errors{font-size:12px;color:#e0bd88}.inline{display:flex;justify-content:space-between;gap:10px;align-items:center}@media(max-width:620px){main{padding:18px 12px}.card{padding:14px}.money{font-size:37px}.wrap{gap:9px}.metric{font-size:22px}.tag{font-size:9px}table{font-size:11px}td,th{padding:9px 2px}}
+</style></head><body><main>
+<header class="top"><div><div class="logo">TA<span>LON</span></div><div class="sub">AUTONOMOUS STRATEGY LAB · V1</div></div><div class="tag">PAPER ONLY</div></header>
+<div class="warning">Simulated trading only. No money, exchange account, or protective orders connected. Hourly candles cannot establish real executable fill prices.</div>
+<section class="wrap">
+<div class="card main"><div class="inline"><h2>Virtual portfolio</h2><div class="tag" id="status">WAITING</div></div><div class="money" id="equity">$10,000.00</div><div class="inline"><div id="pnl" class="green">$0.00 (0.00%)</div><div class="muted" id="updated">Not connected</div></div><div id="chart"></div></div>
+<div class="card"><h2>Closed trades</h2><div class="metric" id="trades">0</div><div class="muted">Cumulative simulated trades</div></div>
+<div class="card"><h2>Max drawdown</h2><div class="metric" id="drawdown">0.00%</div><div class="muted">From peak equity</div></div>
+<div class="card full"><div class="inline"><h2>Current position</h2><div class="muted" id="last-data">No candles yet</div></div><div id="position" class="muted">No open paper position.</div></div>
+<div class="card full"><h2>Five-market radar</h2><table><thead><tr><th>Asset</th><th>Last close</th><th>Signal</th><th>Status</th></tr></thead><tbody id="markets"></tbody></table></div>
+<div class="card full"><h2>Trade ledger</h2><div style="overflow-x:auto"><table><thead><tr><th>Asset</th><th>Side</th><th>Net P&L</th><th>Reason</th></tr></thead><tbody id="ledger"></tbody></table></div></div>
+<div class="card full"><h2>System / feed status</h2><div id="errors" class="muted">Waiting for initial scan.</div></div>
+</section>
+<div class="actions"><a class="button" href="https://github.com/kwjwpzr98g-web/Crusty/actions/workflows/talon.yml">Open bot controls ↗</a><a class="button secondary" href="https://github.com/kwjwpzr98g-web/Crusty">Source & configuration ↗</a></div>
+<div class="note">TALON v1 | Public Kraken hourly OHLCV | Simulated one-position 1× directional exposure | 0.4% fee + 0.1% slippage per side | Scheduled run timing is best-effort. Data refreshes every 5 minutes while the dashboard is open.</div>
+</main><script>
+const $=id=>document.getElementById(id);
+function usd(v){return Number(v).toLocaleString('en-US',{style:'currency',currency:'USD',maximumFractionDigits:2})}
+function txt(parent,tag,value){const el=document.createElement(tag);el.textContent=String(value);parent.append(el);return el}
+function cell(row,val){return txt(row,'td',val)}
+function graph(history){
+const area=$('chart');area.replaceChildren();
+if(!history.length){txt(area,'div','Chart begins after the first successful scan.');return}
+const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 900 150');svg.setAttribute('preserveAspectRatio','none');
+const vals=history.map(x=>x.equity);let lo=Math.min(...vals),hi=Math.max(...vals);if(hi===lo){hi+=1;lo-=1}
+const pts=vals.map((n,i)=>[30+i*840/Math.max(vals.length-1,1),137-(n-lo)/(hi-lo)*120].join(',')).join(' ');
+const line=document.createElementNS('http://www.w3.org/2000/svg','polyline');line.setAttribute('fill','none');line.setAttribute('stroke','#88dcc3');line.setAttribute('stroke-width','3');line.setAttribute('points',pts);svg.append(line);area.append(svg)
+}
+async function refresh(){
+try{
+const response=await fetch('data.json?tick='+Date.now(),{cache:'no-store'});if(!response.ok)throw Error('report unavailable');
+const d=await response.json();
+$('status').textContent=d.status;$('equity').textContent=usd(d.equity);
+const p=(Number(d.pnl)/Number(d.settings.starting_equity))*100;
+$('pnl').textContent=usd(d.pnl)+' ('+p.toFixed(2)+'%)';$('pnl').className=d.pnl<0?'red':'green';
+$('updated').textContent=d.updated?'Scan '+new Date(d.updated).toLocaleString():'Never scanned';
+$('last-data').textContent=d.last_data?'Last closed candle: '+new Date(d.last_data).toLocaleString():'No candle yet';
+$('trades').textContent=d.completed;$('drawdown').textContent=d.drawdown.toFixed(2)+'%';
+$('position').textContent=d.position?(d.position.side+' '+d.position.symbol+' | Entry '+usd(d.position.entry)+' | Stop '+usd(d.position.stop)+' | Target '+usd(d.position.target)):'No open paper position.';
+const tbody=$('markets');tbody.replaceChildren();
+for(const [name,m] of Object.entries(d.markets||{})){const row=document.createElement('tr');cell(row,name);cell(row,m.price?usd(m.price):'—');cell(row,m.signal||'—');cell(row,m.status);tbody.append(row)}
+const ledger=$('ledger');ledger.replaceChildren();
+for(const t of (d.trades||[]).slice(0,30)){const row=document.createElement('tr');cell(row,t.symbol);cell(row,t.side);const c=cell(row,usd(t.pnl));c.className=t.pnl>=0?'green':'red';cell(row,t.reason);ledger.append(row)}
+if(!d.trades.length){const r=document.createElement('tr');cell(r,'No completed paper trades yet');ledger.append(r)}
+const errors=Object.entries(d.errors||{}).map(([k,v])=>k+': '+v).join(' | ');
+$('errors').textContent=errors||(d.lock_reason?'Risk lock: '+d.lock_reason:'Feed checks passed or not yet initialized.');
+graph(d.history||[]);
+}catch(e){$('errors').textContent='Dashboard data unavailable: '+e.message}
+}
+refresh();setInterval(refresh,300000);
+</script></body></html>
