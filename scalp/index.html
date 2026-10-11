@@ -1,59 +1,185 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0c121a"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="TALON SCALP"><title>TALON SCALP | Seconds-scale paper engine</title>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#090f18"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="TALON PRO">
+<title>TALON | Live Paper Trading Terminal</title>
 <style>
-:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:#0c131c;color:#eaf1f3}*{box-sizing:border-box}
-body{margin:0;background:radial-gradient(ellipse at top right,#16343b,#0c131c 65%)}
-main{max-width:980px;margin:auto;padding:18px 14px 55px}
-header,.row{display:flex;align-items:center;justify-content:space-between;gap:12px}
-header{border-bottom:1px solid #28434b;padding:12px 0 24px}
-.brand{font-size:25px;letter-spacing:3px;font-weight:900}.brand b{color:#79d6bb}
-.sub{font-size:11px;color:#9caebb;letter-spacing:.1em}
-.pill{padding:7px 11px;border-radius:100px;border:1px solid #477469;color:#ade9d4;font-size:11px}
-.notice{background:#2b251c;color:#e4cca0;padding:12px;border:1px solid #5a4c36;border-radius:10px;margin:15px 0;font-size:12px;line-height:1.5}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.card{border:1px solid #2a3b48;border-radius:15px;background:#17232e;padding:16px;min-width:0}
-.wide{grid-column:1/-1}.hero{background:linear-gradient(125deg,#1b3841,#152630)}
-h2,.label{font-size:11px;color:#abc0c8;text-transform:uppercase;letter-spacing:.08em;font-weight:600}
-h2{margin:0 0 13px}.value{font-size:28px;font-weight:750;margin:6px 0;font-variant-numeric:tabular-nums}
-.hero .value{font-size:43px}.muted{font-size:12px;color:#89a4ad}.good{color:#79dbc2}.bad{color:#ff9c95}
-table{width:100%;border-collapse:collapse;text-align:left;font-size:12px}td,th{border-bottom:1px solid #2a4049;padding:10px 5px;font-variant-numeric:tabular-nums;white-space:nowrap}th{font-size:10px;color:#9caeb7;text-transform:uppercase}
-.scroll{overflow-x:auto}.footer{margin-top:23px;color:#89a4ad;line-height:1.6;font-size:11px}a{color:#81dcc0}
-@media(max-width:600px){.hero .value{font-size:36px}.card{padding:13px}.brand{font-size:21px}.value{font-size:25px}}
+:root{color-scheme:dark;--bg:#090f18;--card:#111f2a;--edge:#263847;--text:#eef7f5;--dim:#92a9b3;--mint:#73e6c2;--red:#ff8e96;--gold:#ffc58a;--blue:#72b5e6;font-family:-apple-system,BlinkMacSystemFont,Inter,"Segoe UI",sans-serif}
+*{box-sizing:border-box}body{margin:0;color:var(--text);background:radial-gradient(ellipse at 50% -220px,#20413f,transparent 760px),var(--bg)}
+button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:2px solid var(--mint);outline-offset:3px}
+main{max-width:1130px;padding:17px 15px 60px;margin:auto}
+.top,.flex{display:flex;gap:12px;align-items:center;justify-content:space-between}
+.top{padding:9px 0 18px;border-bottom:1px solid var(--edge)}.logo{font-size:25px;font-weight:900;letter-spacing:3px}.logo b{color:var(--mint)}.eyebrow{color:var(--dim);font-size:10px;letter-spacing:.13em}
+.pill{border-radius:50px;border:1px solid #3e6e66;padding:7px 10px;color:var(--mint);font-size:11px;font-weight:700;white-space:nowrap}
+.note{font-size:11px;color:#d9c69d;border:1px solid #5e4f37;background:#26241d;border-radius:9px;padding:10px 13px;margin:14px 0;line-height:1.5}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:12px}.span12{grid-column:span 12}.span8{grid-column:span 8}.span6{grid-column:span 6}.span4{grid-column:span 4}.span3{grid-column:span 3}
+.panel{background:linear-gradient(155deg,#152531,#101d28);border:1px solid var(--edge);border-radius:15px;padding:17px;min-width:0;overflow:hidden}.hero{background:linear-gradient(130deg,#1c3b40,#142531 55%,#13212d)}
+.label{font-size:10px;color:var(--dim);font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+.number{font-size:27px;letter-spacing:-.7px;font-weight:750;font-variant-numeric:tabular-nums;margin:6px 0}
+.big{font-size:45px;letter-spacing:-2px}.tiny{font-size:11px;color:var(--dim)}.green{color:var(--mint)}.red{color:var(--red)}.gold{color:var(--gold)}
+h2{font-size:12px;color:#d5e8e8;text-transform:uppercase;letter-spacing:.1em;margin:0 0 13px}
+.rowgap{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.btn{background:#172c38;border:1px solid #335b62;color:#b0f1dc;border-radius:9px;padding:7px 10px;font-size:11px;font-weight:700}
+.btn[aria-pressed=true],.btn.active{background:#27675e;color:#fff}
+.muted{color:var(--dim)}.scroll{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:12px}
+th{text-align:left;text-transform:uppercase;color:var(--dim);font-size:10px;letter-spacing:.05em}td,th{padding:10px 8px;border-bottom:1px solid #273b44;white-space:nowrap}
+td:nth-child(2){font-variant-numeric:tabular-nums}
+.chart-button{width:100%;padding:0;background:none;border:0;color:inherit;display:block;text-align:left;position:relative}
+.chart-button:after{content:"Tap chart to explore ↗";position:absolute;right:0;bottom:2px;color:var(--dim);font-size:10px}
+.plot{height:180px;position:relative}.plot svg{display:block;width:100%;height:100%;overflow:visible}
+.mini{height:48px}.mini svg{display:block;width:100%;height:100%}
+.coin{padding:15px;background:#122632;border:1px solid var(--edge);border-radius:13px;color:inherit;text-align:left;min-width:0}
+.coin-name{font-weight:850;letter-spacing:.04em;font-size:14px}.coin-quote{font-variant-numeric:tabular-nums;font-size:18px;font-weight:750;margin-top:8px}
+.coin:active,.coin:hover{border-color:#568f81}.coin .meta{display:flex;justify-content:space-between;gap:5px;color:var(--dim);font-size:10px;margin-top:4px}
+.progress-track{height:8px;background:#233440;border-radius:99px;overflow:hidden;margin:12px 0 7px}
+.progress-fill{height:100%;background:var(--mint);width:0%;transition:width .3s}
+.track{background:#273742;border-radius:7px;height:11px;overflow:hidden}
+.track>div{height:100%;background:var(--mint);min-width:0}
+.hbar{display:grid;grid-template-columns:110px 1fr 63px;align-items:center;gap:10px;margin:9px 0;font-size:11px}
+.stat-pair{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #274049}
+.legend{display:inline-block;width:8px;height:8px;border-radius:3px;margin-right:5px}
+.footer{margin-top:22px;color:var(--dim);font-size:11px;line-height:1.65}a{color:var(--mint)}
+.overlay{position:fixed;inset:0;background:rgba(2,9,16,.86);z-index:9;display:none;align-items:center;justify-content:center;padding:12px}
+.overlay.show{display:flex}.dialog{background:#11212d;border:1px solid #4c6d6b;border-radius:18px;padding:15px;max-width:990px;width:100%;max-height:94dvh;overflow-y:auto}
+.dialog-head{display:flex;justify-content:space-between;align-items:start;gap:10px;margin-bottom:12px}
+.dialog .plot{height:min(52vh,390px);min-height:210px}.dialog .plot svg{touch-action:none}
+.close{font-size:21px;border:1px solid #426065;border-radius:9px;background:#162e39;color:#d8e9e8;padding:4px 11px}
+.tip{font-size:12px;color:#b8d9d1;min-height:19px;margin:9px 0}.hint{font-size:11px;color:var(--dim)}
+@media(max-width:790px){.span8,.span4{grid-column:span 12}.span6{grid-column:span 12}.span3{grid-column:span 6}}
+@media(max-width:500px){main{padding:12px 10px 40px}.panel{padding:13px}.grid{gap:9px}.big{font-size:38px}.number{font-size:22px}.coin-quote{font-size:15px}.logo{font-size:22px}.span3{grid-column:span 6}.hbar{grid-template-columns:85px 1fr 57px}.dialog{padding:11px}}
 </style></head><body><main>
-<header><div><div class="brand">TALON <b>SCALP</b></div><div class="sub">STREAMING QUOTES · VIRTUAL TRADES</div></div><div class="pill" id="status">CONNECTING</div></header>
-<div class="notice">PAPER-ONLY EXPERIMENT. No exchange account or real orders. Penny-sized moves usually lose money after fees and spread. The dashboard displays simulated, not executable, results.</div>
+<header class="top"><div><div class="logo">TALON <b>PRO</b></div><div class="eyebrow">SECOND-SCALE SIMULATION TERMINAL</div></div><div class="pill" id="connection">CONNECTING</div></header>
+<div class="note">PAPER ONLY · Two independent virtual strategies. Quotes are real; fills, profit and loss are simulations. Passive-maker fills are estimated using a trade-through proxy, not actual exchange queue execution. Public dashboard contains no trading credentials.</div>
 <div class="grid">
-<div class="card wide hero"><div class="label">Virtual account equity</div><div class="value" id="equity">$10,000.00</div><div class="row"><div class="muted" id="pnl">$0 net</div><div class="muted" id="updated">Waiting</div></div></div>
-<div class="card"><div class="label">Market quote updates</div><div class="value" id="seen">0</div><div class="muted">Live feed events</div></div>
-<div class="card"><div class="label">Closed virtual trades</div><div class="value" id="trades">0</div><div class="muted">After fees and slippage</div></div>
-<div class="card"><div class="label">Signals checked</div><div class="value" id="checks">0</div><div class="muted">Most will be rejected</div></div>
-<div class="card"><div class="label">Drawdown</div><div class="value" id="drawdown">0%</div><div class="muted">From virtual equity peak</div></div>
-<div class="card wide"><div class="row"><h2>Open virtual trade</h2><div class="pill" id="feed">NOT CONNECTED</div></div><div class="muted" id="position">Waiting for an opportunity that covers transaction costs</div></div>
-<div class="card wide"><h2>Live bid / ask radar</h2><div class="scroll"><table><thead><tr><th>Asset</th><th>Bid</th><th>Ask</th><th>Spread</th><th>All-in hurdle</th></tr></thead><tbody id="markets"></tbody></table></div><p class="muted">All-in hurdle: estimated price increase needed to cover spread, two taker fees, slippage and net-profit target.</p></div>
-<div class="card wide"><h2>Paper trade ledger</h2><div class="scroll"><table><thead><tr><th>Asset</th><th>Gross</th><th>Fees</th><th>Net</th><th>Exit</th></tr></thead><tbody id="ledger"></tbody></table></div></div>
-<div class="card wide"><h2>System events</h2><div class="muted" id="events">Waiting for market feed.</div></div></div>
-<div class="footer">Second-scale research strategy. Incoming quotes may arrive several times a second, but no trades are guaranteed. Default fee model: Kraken Pro first-tier 0.8% taker per side plus slippage. App refreshes every two seconds. <a href="https://github.com/kwjwpzr98g-web/Crusty/tree/main/scalp">Source</a>.</div></main>
+<section class="panel hero span8"><div class="flex"><div class="label">Conservative taker virtual equity</div><span class="pill">REAL-TIME BBO</span></div><div class="number big" id="equity">$10,000.00</div><div class="flex"><strong id="pnl" class="green">$0.00 net</strong><span class="tiny" id="lastUpdate">Waiting for quotes</span></div>
+<button class="chart-button" data-open="equity" aria-label="Expand equity chart"><div class="plot" id="equityPlot"></div></button></section>
+<section class="panel span4"><h2>Strategy comparison</h2>
+<div class="label">Active maker-style shadow</div><div class="number" id="makerEquity">$10,000.00</div><div class="flex"><span id="makerPnl" class="tiny">Net: $0.00</span><span class="tiny" id="makerOrders">0 quotes placed</span></div>
+<div style="margin-top:18px" class="label">Conservative taker strategy</div><div class="stat-pair"><span class="tiny">Virtual trades</span><strong id="takerTrades">0</strong></div>
+<div class="stat-pair"><span class="tiny">Maker shadow fills*</span><strong id="makerFills">0</strong></div><div class="stat-pair"><span class="tiny">Maker shadow closed trades</span><strong id="makerTrades">0</strong></div>
+<div class="stat-pair"><span class="tiny">Maker quote expirations</span><strong id="makerExpired">0</strong></div><div class="tiny" style="margin-top:10px">*Estimated trade-through fills; actual maker orders can remain unfilled.</div></section>
+<section class="panel span3"><div class="label">Quote updates</div><div class="number" id="updates">0</div><div class="tiny">Streaming best bid/ask</div></section>
+<section class="panel span3"><div class="label">Signal evaluations</div><div class="number" id="checks">0</div><div class="tiny">Not automatically trades</div></section>
+<section class="panel span3"><div class="label">Taker win rate</div><div class="number" id="wins">—</div><div class="tiny" id="winDetail">No closed trades</div></section>
+<section class="panel span3"><div class="label">Virtual drawdown</div><div class="number" id="drawdown">0%</div><div class="tiny">From peak equity</div></section>
+<section class="panel span12"><div class="flex"><h2>Market radar · click any chart to inspect</h2><span class="tiny" id="marketCount">0/5 markets</span></div>
+<div class="grid" id="coins"></div></section>
+<section class="panel span6"><h2>Active virtual position</h2><div class="flex"><strong id="positionSymbol">NO POSITION</strong><span class="tiny" id="holdTime">Standby</span></div>
+<div class="progress-track"><div class="progress-fill" id="posProgress"></div></div>
+<div class="flex tiny"><span id="posStop">Stop —</span><span id="posEntry">Entry —</span><span id="posTarget">Target —</span></div>
+<div class="tiny" id="positionText" style="margin-top:13px">No qualifying setup. This bot is not forced to trade.</div></section>
+<section class="panel span6"><h2>Transaction cost reality</h2><div class="stat-pair"><span class="tiny">Taker round-trip fees</span><strong id="feeAssumption">160 bps</strong></div>
+<div class="stat-pair"><span class="tiny">Maker shadow round-trip fees</span><strong id="makerHurdle">80 bps</strong></div>
+<div class="stat-pair"><span class="tiny">Total gross trading P&amp;L</span><strong id="gross">$0.00</strong></div><div class="stat-pair"><span class="tiny">Fees actually simulated</span><strong class="red" id="fees">$0.00</strong></div><div class="stat-pair"><span class="tiny">Total net trading P&amp;L</span><strong id="net">$0.00</strong></div>
+<div class="tiny" style="margin-top:10px">Maker trades assume queue fills from price trade-through, and forced exits may pay taker fees. Low-fee results are not guaranteed.</div></section>
+<section class="panel span6"><h2>Why setups are rejected</h2><div id="reasons"><span class="tiny">Collecting price signals…</span></div></section>
+<section class="panel span6"><h2>Maker order activity</h2><div class="stat-pair"><span class="tiny">Virtual maker quotes posted</span><strong id="posted">0</strong></div><div class="stat-pair"><span class="tiny">Simulated fills</span><strong id="filled">0</strong></div><div class="stat-pair"><span class="tiny">Simulated maker target exits</span><strong id="makerExits">0</strong></div><div class="stat-pair"><span class="tiny">Forced / taker exits</span><strong id="forcedExits">0</strong></div><div class="tiny" id="makerState" style="margin-top:12px">Waiting for quotes</div></section>
+<section class="panel span12"><div class="flex"><h2>Virtual trade timeline</h2><div class="rowgap"><button class="btn active" id="tabTaker">Conservative</button><button class="btn" id="tabMaker">Maker shadow</button></div></div><div class="scroll">
+<table><thead><tr><th>Symbol</th><th>Exit</th><th>Duration</th><th>Gross</th><th>Fees</th><th>Net</th><th>Reason</th></tr></thead><tbody id="ledger"></tbody></table></div></section>
+<section class="panel span12"><h2>Recent engine events</h2><div class="tiny" id="events">Waiting for live feed…</div></section>
+</div><div class="footer">TALON PRO is a research simulator, not an executable or audited trading strategy. Data and performance may reset if hosting/persistence fails. Click any graph or coin card to inspect historical quotes and tap the graph to read exact point values. Chart history begins when recorded; nothing is backfilled. <a href="https://github.com/kwjwpzr98g-web/Crusty/tree/main/scalp">View source code</a>.</div></main>
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-label="Historical chart" aria-hidden="true"><div class="dialog">
+<div class="dialog-head"><div><div class="label" id="detailLabel">CHART</div><div class="number" id="detailValue" style="font-size:25px">—</div></div><button id="dismiss" class="close" aria-label="Close chart">×</button></div>
+<div class="rowgap" id="ranges" style="margin:0 0 9px"></div>
+<div class="plot" id="detailPlot"></div>
+<div class="tip" id="cursorReadout">Tap or drag across the graph to inspect points.</div><div class="hint">Historical quotes are snapshots sampled around every 10 seconds; the engine itself processes incoming quotes continuously. Your selected range controls the displayed history.</div>
+</div></div>
 <script>
-const el=x=>document.getElementById(x);
-const money=n=>Number(n).toLocaleString('en-US',{style:'currency',currency:'USD'});
-const number=n=>Number(n).toLocaleString('en-US',{maximumFractionDigits:2});
-function td(tr,v){const t=document.createElement('td');t.textContent=String(v);tr.append(t);return t}
-function row(vals){const tr=document.createElement('tr');for(const v of vals)td(tr,v);return tr}
-function render(id,rows,empty){const root=el(id);root.replaceChildren();if(!rows.length){root.append(row([empty]));return}for(const r of rows)root.append(r)}
-async function update(){
-try{const res=await fetch('/api/status',{cache:'no-store'});if(!res.ok)throw Error('HTTP '+res.status);const d=await res.json();
-el('status').textContent=d.status;el('feed').textContent=d.feed+' · '+d.active_markets+'/5';
-el('equity').textContent=money(d.equity);el('pnl').textContent=money(d.pnl)+' net';
-el('pnl').className=d.pnl<0?'bad':'good';el('seen').textContent=number(d.seen);el('trades').textContent=d.trades.length;
-el('checks').textContent=number(d.rejected);el('drawdown').textContent=d.drawdown_pct+'%';
-el('updated').textContent=new Date(d.timestamp).toLocaleTimeString();
-el('position').textContent=d.position?(d.position.symbol+' LONG · '+number(d.position.qty)+' units · entry '+money(d.position.entry)):'No position. Waiting for fee-covered signals.';
-const markets=Object.entries(d.markets).map(([s,q])=>row([s,number(q.bid),number(q.ask),q.spread_bps+' bps',q.fee_hurdle_bps+' bps']));
-render('markets',markets,'Waiting for live quotes');
-const rows=d.trades.slice(0,25).map(t=>row([t.symbol,money(t.gross),money(t.fees),money(t.pnl),t.reason]));
-render('ledger',rows,'No closed paper trades');
-const ev=el('events');ev.replaceChildren();for(const i of d.events.slice(0,8)){const p=document.createElement('p');p.textContent=i.at+' · '+i.message;ev.append(p)}
-}catch(e){el('status').textContent='DISCONNECTED';el('events').textContent='Dashboard cannot reach paper engine: '+e.message}
+"use strict";
+const $=x=>document.getElementById(x),NS="http://www.w3.org/2000/svg";
+let LAST=null,selected="BTC/USD",range="1h",tab="taker",dialog=false,historyFetch=0;
+const money=n=>Number(n||0).toLocaleString("en-US",{style:"currency",currency:"USD",minimumFractionDigits:2,maximumFractionDigits:2});
+const number=n=>Number(n||0).toLocaleString("en-US",{maximumFractionDigits:1});
+const price=n=>Number(n||0).toLocaleString("en-US",{maximumFractionDigits:7});
+const greenRed=n=>n<0?"red":"green";
+function text(id,t){$(id).textContent=t}
+function svg(tag,attrs={}){let z=document.createElementNS(NS,tag);for(const [k,v] of Object.entries(attrs))z.setAttribute(k,String(v));return z}
+function chart(target,raw,options={}){
+const root=typeof target==="string"?$(target):target;root.replaceChildren();
+const points=(raw||[]).map(p=>[Number(p[0]),Number(p[1])]).filter(p=>Number.isFinite(p[0])&&Number.isFinite(p[1]));
+if(!points.length){const t=document.createElement("div");t.className="tiny";t.style.padding="35px 5px";t.textContent="Collecting chart history…";root.appendChild(t);return}
+const small=options.small||false, w=820,h=small?80:270,pad=small?6:28,hh=h-pad*2,ww=w-pad*2;
+let min=Math.min(...points.map(p=>p[1])),max=Math.max(...points.map(p=>p[1]));const spread=Math.max(1e-9,max-min);
+const gap=spread*.14;min-=gap;max+=gap;
+let start=points[0][0],end=points[points.length-1][0];if(end<=start)end=start+1;
+const px=t=>pad+(t-start)/(end-start)*ww;const py=v=>pad+(max-v)/(max-min)*hh;
+const plot=svg("svg",{viewBox:"0 0 "+w+" "+h,preserveAspectRatio:"none",role:"img","aria-label":options.label||"Time series chart"});
+if(!small)for(let i=0;i<=4;i++){const y=pad+i*hh/4;plot.appendChild(svg("line",{x1:pad,y1:y,x2:w-pad,y2:y,stroke:"#27414a","stroke-width":1}));const t=svg("text",{x:pad+4,y:y-5,"font-size":11,fill:"#9bb5bd"});t.textContent=number(max-i*(max-min)/4);plot.appendChild(t)}
+let path="";points.forEach((p,i)=>{path+=(i?"L":"M")+px(p[0]).toFixed(1)+","+py(p[1]).toFixed(1)+" "});
+const area=svg("path",{d:path+"L"+px(end)+","+(h-pad)+" L"+px(start)+","+(h-pad)+"Z",fill:options.equity?"#53caa416":"#70bfe014"});
+const stroke=points[points.length-1][1]>=points[0][1]?"#6eddb9":"#ff9295";
+plot.appendChild(area);plot.appendChild(svg("path",{d:path,fill:"none",stroke, "stroke-width":small?2.4:2.8,"vector-effect":"non-scaling-stroke"}));
+if(!small){const cross=svg("line",{x1:0,x2:0,y1:pad,y2:h-pad,stroke:"#c8f5e7","stroke-width":1,"stroke-dasharray":"4 4",visibility:"hidden"});const dot=svg("circle",{cx:0,cy:0,r:4,fill:stroke,stroke:"#eafef5","stroke-width":1,visibility:"hidden"});plot.appendChild(cross);plot.appendChild(dot);
+const tooltip=options.tooltip||$("cursorReadout");
+function pointAt(ev){const rect=plot.getBoundingClientRect();const mx=Math.max(0,Math.min(1,(ev.clientX-rect.left)/rect.width));const timestamp=start+mx*(end-start);let best=0,dist=Infinity;for(let i=0;i<points.length;i++){const dd=Math.abs(points[i][0]-timestamp);if(dd<dist){best=i;dist=dd}}
+const p=points[best],x=px(p[0]),y=py(p[1]);cross.setAttribute("x1",x);cross.setAttribute("x2",x);cross.setAttribute("visibility","visible");dot.setAttribute("cx",x);dot.setAttribute("cy",y);dot.setAttribute("visibility","visible");
+if(tooltip)tooltip.textContent=new Date(p[0]*1000).toLocaleString()+" · "+(options.equity?money(p[1]):price(p[1]));}
+plot.addEventListener("pointermove",pointAt);plot.addEventListener("pointerdown",pointAt);
 }
-update();setInterval(update,2000);
+root.appendChild(plot)}
+function makeCoin(sym,q,points){
+const button=document.createElement("button");button.className="coin";button.type="button";button.setAttribute("aria-label","Expand "+sym+" price graph");
+const first=document.createElement("div");first.className="flex";
+const title=document.createElement("span");title.className="coin-name";title.textContent=sym.replace("/USD","");
+const status=document.createElement("span");status.className=q&&q.fresh?"green tiny":"red tiny";status.textContent=q&&q.fresh?"LIVE":"STALE";first.append(title,status);
+const v=document.createElement("div");v.className="coin-quote";v.textContent=q?price(q.mid):"—";
+const mini=document.createElement("div");mini.className="mini";
+const meta=document.createElement("div");meta.className="meta";const m=document.createElement("span");m.textContent=q?("Spread "+q.spread_bps+" bps"):"No feed";const m2=document.createElement("span");m2.textContent=q?("Hurdle "+q.fee_hurdle_bps+" bps"):"—";meta.append(m,m2);
+button.append(first,v,mini,meta);chart(mini,points.map(x=>[x[0],x[1]]),{small:true,label:sym+" sampled price"});button.addEventListener("click",()=>openDetail(sym));return button;
+}
+function reasons(obj){const entries=Object.entries(obj||{}).filter(x=>x[1]>0);const root=$("reasons");root.replaceChildren();if(!entries.length){root.textContent="Waiting for evaluations…";return}entries.sort((a,b)=>b[1]-a[1]);const max=entries[0][1];for(const [key,n] of entries.slice(0,7)){const row=document.createElement("div");row.className="hbar";const name=document.createElement("span");name.textContent=key.replaceAll("_"," ");const track=document.createElement("div");track.className="track";const fill=document.createElement("div");fill.style.width=(n/max*100)+"%";track.append(fill);const val=document.createElement("strong");val.textContent=number(n);row.append(name,track,val);root.append(row)}}
+function row(cells){const tr=document.createElement("tr");for(const [i,v] of cells.entries()){const td=document.createElement("td");td.textContent=String(v);if(i===5){const num=Number(String(v).replace(/[^-.0-9]/g,""));td.className=greenRed(num)}tr.append(td)}return tr}
+function renderTable(){
+const root=$("ledger");root.replaceChildren();if(!LAST)return;
+const maker=tab==="maker",trades=maker?(LAST.maker_shadow?.trades||[]):(LAST.trades||[]);
+if(!trades.length){root.append(row(["No closed simulated trades for this strategy"]));return}
+for(const t of trades.slice(0,30)){root.append(row([t.symbol,new Date(t.exited).toLocaleTimeString(),number(t.hold_s)+"s",money(t.gross),money(t.fees),money(t.pnl),t.reason]))}
+}
+function update(d){
+LAST=d;text("connection",(d.feed||"WAIT")+" · "+d.active_markets+"/5 LIVE");text("equity",money(d.equity));text("pnl",money(d.pnl)+" net");$("pnl").className=greenRed(d.pnl);
+text("lastUpdate",new Date(d.timestamp).toLocaleTimeString());text("updates",number(d.seen));text("checks",number(d.rejected));text("drawdown",d.drawdown_pct+"%");
+const st=d.stats||{},mt=d.maker_shadow||{},co=mt.counts||{};
+text("wins",((st.wins||0)+(st.losses||0))?(((st.wins||0)/((st.wins||0)+(st.losses||0))*100).toFixed(1)+"%"):"—");text("winDetail",(st.wins||0)+" wins · "+(st.losses||0)+" losses");
+text("makerEquity",money(mt.equity==null?10000:mt.equity));text("makerPnl",money(mt.pnl||0)+" net");$("makerPnl").className=greenRed(mt.pnl||0);
+text("makerOrders",number(co.quoted)+" quotes posted");text("takerTrades",number(d.trades.length));text("makerFills",number(co.filled));text("makerTrades",number((mt.trades||[]).length));text("makerExpired",number(co.expired));
+text("gross",money(st.gross));text("fees",money(st.fees));text("net",money(st.net));$("net").className=greenRed(st.net||0);
+text("feeAssumption",number((d.fee_bps_per_side||80)*2)+" bps");
+text("makerHurdle",number(mt.round_trip_hurdle_bps||80)+" bps + fill uncertainty");
+text("posted",number(co.quoted));text("filled",number(co.filled));text("makerExits",number(co.maker_exits));text("forcedExits",number(co.forced_exits));
+text("makerState",mt.locked?"Maker shadow risk locked":mt.position?"Shadow maker position: "+mt.position.symbol:mt.order?"Posted shadow limit quote: "+mt.order.symbol:"Scanning for maker quote signals");
+text("marketCount",d.active_markets+"/5 quote feeds");
+chart("equityPlot",d.equity_sparkline||[],{equity:true,label:"Virtual equity"});
+const coins=$("coins");coins.replaceChildren();
+for(const s of ["BTC/USD","ETH/USD","SOL/USD","BNB/USD","HYPE/USD"]){const element=makeCoin(s,(d.markets||{})[s],(d.sparklines||{})[s]||[]);element.style.gridColumn=window.innerWidth<550?"span 6":"span 3";coins.append(element)}
+if(d.position){const p=d.position;const q=(d.markets||{})[p.symbol];const pr=q?.bid||p.entry;const target=p.entry*1.018,stop=p.entry*.995;const frac=Math.max(0,Math.min(100,(pr-stop)/(target-stop)*100));text("positionSymbol",p.symbol+" · VIRTUAL LONG");text("holdTime",number(Date.now()/1000-p.t)+" sec");text("posStop","Stop "+price(stop));text("posEntry","Entry "+price(p.entry));text("posTarget","Target (illustrative) "+price(target));$("posProgress").style.width=frac+"%";text("positionText","Position mark: "+price(pr)+" · Net proceeds account for a second taker fee");}
+else{text("positionSymbol","NO POSITION");text("holdTime","Standby");text("posStop","Stop —");text("posEntry","Entry —");text("posTarget","Target —");$("posProgress").style.width="0%";text("positionText","Scanning for setups with sufficient expected returns after transaction costs.")}
+reasons(d.filter_reasons||{});
+const events=$("events");events.replaceChildren();
+for(const e of [...(d.events||[]).map(x=>({at:x.at,message:x.message,tag:"TAKER"})),...(mt.events||[]).map(x=>({at:x.at,message:x.message,tag:"MAKER"}))].sort((a,b)=>b.at.localeCompare(a.at)).slice(0,8)){const p=document.createElement("div");p.className="tiny";p.style.padding="7px 0";p.textContent=e.at+" · "+e.tag+" · "+e.message;events.append(p)}
+renderTable();
+}
+let inFlight=false;
+async function poll(){if(inFlight)return;inFlight=true;try{const res=await fetch("/api/status",{cache:"no-store"});if(!res.ok)throw Error("HTTP "+res.status);update(await res.json())}catch(e){text("connection","FEED UNAVAILABLE");text("lastUpdate",e.message)}finally{inFlight=false}}
+function openDetail(subject){
+selected=subject;dialog=true;$("overlay").classList.add("show");$("overlay").setAttribute("aria-hidden","false");
+text("detailLabel",subject==="equity"?"VIRTUAL EQUITY · TAP TO INSPECT":subject+" · PRICE HISTORY");
+buildRanges();refreshDetail();$("dismiss").focus();
+}
+function closeDetail(){dialog=false;$("overlay").classList.remove("show");$("overlay").setAttribute("aria-hidden","true")}
+function buildRanges(){const root=$("ranges");root.replaceChildren();for(const r of ["5m","15m","1h","4h","24h"]){const b=document.createElement("button");b.className="btn"+(r===range?" active":"");b.textContent=r;b.setAttribute("aria-pressed",r===range?"true":"false");b.addEventListener("click",()=>{range=r;buildRanges();refreshDetail()});root.append(b)}}
+async function refreshDetail(){
+const which=++historyFetch;const sym=selected==="equity"?"BTC/USD":selected;const url="/api/history?symbol="+encodeURIComponent(sym)+"&range="+encodeURIComponent(range);
+text("cursorReadout","Loading "+range+" history…");
+try{const res=await fetch(url,{cache:"no-store"});if(!res.ok)throw Error("HTTP "+res.status);const data=await res.json();if(!dialog||which!==historyFetch)return;
+const equity=selected==="equity",pts=(equity?data.equity:data.price).map(x=>[x[0],x[1]]);
+text("detailValue",pts.length?(equity?money(pts[pts.length-1][1]):price(pts[pts.length-1][1])):"No samples recorded yet");
+chart("detailPlot",pts,{equity,label:equity?"Net virtual equity":"Midpoint price "+sym});
+text("cursorReadout",pts.length?"Tap or drag across the chart to inspect a recorded point.":"No historical observations in this range; data begins when the bot starts recording.");
+}catch(e){if(dialog&&which===historyFetch)text("cursorReadout","History unavailable: "+e.message)}
+}
+document.querySelector("[data-open=equity]").addEventListener("click",()=>openDetail("equity"));
+$("dismiss").addEventListener("click",closeDetail);
+$("overlay").addEventListener("click",e=>{if(e.target===$("overlay"))closeDetail()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&dialog)closeDetail()});
+$("tabTaker").addEventListener("click",()=>{tab="taker";$("tabTaker").classList.add("active");$("tabMaker").classList.remove("active");renderTable()});
+$("tabMaker").addEventListener("click",()=>{tab="maker";$("tabMaker").classList.add("active");$("tabTaker").classList.remove("active");renderTable()});
+poll();setInterval(poll,2500);setInterval(()=>{if(dialog)refreshDetail()},15000);
 </script></body></html>
