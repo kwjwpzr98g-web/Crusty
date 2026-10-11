@@ -1,0 +1,62 @@
+name: TALON paper scanner
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'talon/runner.py'
+      - 'talon/config.json'
+      - '.github/workflows/talon.yml'
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+    inputs:
+      operation:
+        description: Paper bot control
+        required: true
+        default: scan
+        type: choice
+        options:
+          - scan
+          - pause
+          - resume
+
+permissions:
+  contents: write
+
+concurrency:
+  group: talon-paper-scan
+  cancel-in-progress: false
+
+jobs:
+  paper:
+    name: Run paper-only scan and update results
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify paper-only engine syntax
+        run: python -m py_compile talon/runner.py
+      - name: Run the paper bot
+        env:
+          OPERATION: ${{ github.event.inputs.operation || 'scan' }}
+        run: python talon/runner.py "$OPERATION"
+      - name: Commit the simulated state and dashboard data
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add talon/state.json docs/data.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'TALON hourly paper scan [skip ci]'
+            git push
+          fi
+      - name: Attach phone dashboard as an artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: talon-dashboard
+          path: docs/
+          retention-days: 30
