@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0c121a"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="TALON SCALP"><title>TALON SCALP | Seconds-scale paper engine</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:#0c131c;color:#eaf1f3}*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at top right,#16343b,#0c131c 65%)}
+main{max-width:980px;margin:auto;padding:18px 14px 55px}
+header,.row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+header{border-bottom:1px solid #28434b;padding:12px 0 24px}
+.brand{font-size:25px;letter-spacing:3px;font-weight:900}.brand b{color:#79d6bb}
+.sub{font-size:11px;color:#9caebb;letter-spacing:.1em}
+.pill{padding:7px 11px;border-radius:100px;border:1px solid #477469;color:#ade9d4;font-size:11px}
+.notice{background:#2b251c;color:#e4cca0;padding:12px;border:1px solid #5a4c36;border-radius:10px;margin:15px 0;font-size:12px;line-height:1.5}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{border:1px solid #2a3b48;border-radius:15px;background:#17232e;padding:16px;min-width:0}
+.wide{grid-column:1/-1}.hero{background:linear-gradient(125deg,#1b3841,#152630)}
+h2,.label{font-size:11px;color:#abc0c8;text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+h2{margin:0 0 13px}.value{font-size:28px;font-weight:750;margin:6px 0;font-variant-numeric:tabular-nums}
+.hero .value{font-size:43px}.muted{font-size:12px;color:#89a4ad}.good{color:#79dbc2}.bad{color:#ff9c95}
+table{width:100%;border-collapse:collapse;text-align:left;font-size:12px}td,th{border-bottom:1px solid #2a4049;padding:10px 5px;font-variant-numeric:tabular-nums;white-space:nowrap}th{font-size:10px;color:#9caeb7;text-transform:uppercase}
+.scroll{overflow-x:auto}.footer{margin-top:23px;color:#89a4ad;line-height:1.6;font-size:11px}a{color:#81dcc0}
+@media(max-width:600px){.hero .value{font-size:36px}.card{padding:13px}.brand{font-size:21px}.value{font-size:25px}}
+</style></head><body><main>
+<header><div><div class="brand">TALON <b>SCALP</b></div><div class="sub">STREAMING QUOTES · VIRTUAL TRADES</div></div><div class="pill" id="status">CONNECTING</div></header>
+<div class="notice">PAPER-ONLY EXPERIMENT. No exchange account or real orders. Penny-sized moves usually lose money after fees and spread. The dashboard displays simulated, not executable, results.</div>
+<div class="grid">
+<div class="card wide hero"><div class="label">Virtual account equity</div><div class="value" id="equity">$10,000.00</div><div class="row"><div class="muted" id="pnl">$0 net</div><div class="muted" id="updated">Waiting</div></div></div>
+<div class="card"><div class="label">Market quote updates</div><div class="value" id="seen">0</div><div class="muted">Live feed events</div></div>
+<div class="card"><div class="label">Closed virtual trades</div><div class="value" id="trades">0</div><div class="muted">After fees and slippage</div></div>
+<div class="card"><div class="label">Signals checked</div><div class="value" id="checks">0</div><div class="muted">Most will be rejected</div></div>
+<div class="card"><div class="label">Drawdown</div><div class="value" id="drawdown">0%</div><div class="muted">From virtual equity peak</div></div>
+<div class="card wide"><div class="row"><h2>Open virtual trade</h2><div class="pill" id="feed">NOT CONNECTED</div></div><div class="muted" id="position">Waiting for an opportunity that covers transaction costs</div></div>
+<div class="card wide"><h2>Live bid / ask radar</h2><div class="scroll"><table><thead><tr><th>Asset</th><th>Bid</th><th>Ask</th><th>Spread</th><th>All-in hurdle</th></tr></thead><tbody id="markets"></tbody></table></div><p class="muted">All-in hurdle: estimated price increase needed to cover spread, two taker fees, slippage and net-profit target.</p></div>
+<div class="card wide"><h2>Paper trade ledger</h2><div class="scroll"><table><thead><tr><th>Asset</th><th>Gross</th><th>Fees</th><th>Net</th><th>Exit</th></tr></thead><tbody id="ledger"></tbody></table></div></div>
+<div class="card wide"><h2>System events</h2><div class="muted" id="events">Waiting for market feed.</div></div></div>
+<div class="footer">Second-scale research strategy. Incoming quotes may arrive several times a second, but no trades are guaranteed. Default fee model: Kraken Pro first-tier 0.8% taker per side plus slippage. App refreshes every two seconds. <a href="https://github.com/kwjwpzr98g-web/Crusty/tree/main/scalp">Source</a>.</div></main>
+<script>
+const el=x=>document.getElementById(x);
+const money=n=>Number(n).toLocaleString('en-US',{style:'currency',currency:'USD'});
+const number=n=>Number(n).toLocaleString('en-US',{maximumFractionDigits:2});
+function td(tr,v){const t=document.createElement('td');t.textContent=String(v);tr.append(t);return t}
+function row(vals){const tr=document.createElement('tr');for(const v of vals)td(tr,v);return tr}
+function render(id,rows,empty){const root=el(id);root.replaceChildren();if(!rows.length){root.append(row([empty]));return}for(const r of rows)root.append(r)}
+async function update(){
+try{const res=await fetch('/api/status',{cache:'no-store'});if(!res.ok)throw Error('HTTP '+res.status);const d=await res.json();
+el('status').textContent=d.status;el('feed').textContent=d.feed+' · '+d.active_markets+'/5';
+el('equity').textContent=money(d.equity);el('pnl').textContent=money(d.pnl)+' net';
+el('pnl').className=d.pnl<0?'bad':'good';el('seen').textContent=number(d.seen);el('trades').textContent=d.trades.length;
+el('checks').textContent=number(d.rejected);el('drawdown').textContent=d.drawdown_pct+'%';
+el('updated').textContent=new Date(d.timestamp).toLocaleTimeString();
+el('position').textContent=d.position?(d.position.symbol+' LONG · '+number(d.position.qty)+' units · entry '+money(d.position.entry)):'No position. Waiting for fee-covered signals.';
+const markets=Object.entries(d.markets).map(([s,q])=>row([s,number(q.bid),number(q.ask),q.spread_bps+' bps',q.fee_hurdle_bps+' bps']));
+render('markets',markets,'Waiting for live quotes');
+const rows=d.trades.slice(0,25).map(t=>row([t.symbol,money(t.gross),money(t.fees),money(t.pnl),t.reason]));
+render('ledger',rows,'No closed paper trades');
+const ev=el('events');ev.replaceChildren();for(const i of d.events.slice(0,8)){const p=document.createElement('p');p.textContent=i.at+' · '+i.message;ev.append(p)}
+}catch(e){el('status').textContent='DISCONNECTED';el('events').textContent='Dashboard cannot reach paper engine: '+e.message}
+}
+update();setInterval(update,2000);
+</script></body></html>
