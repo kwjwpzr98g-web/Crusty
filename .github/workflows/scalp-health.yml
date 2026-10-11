@@ -1,0 +1,36 @@
+name: Verify TALON SCALP live feed
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/scalp-health.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify service and streaming quotes
+        run: |
+          python - <<'PY'
+          import json, time, urllib.request
+          url='https://talon-scalp-stream-production.up.railway.app'
+          for i in range(9):
+              try:
+                  with urllib.request.urlopen(url+'/api/status', timeout=12) as resp:
+                      j=json.load(resp)
+                  print('Mode:',j.get('mode'),'Status:',j.get('status'))
+                  print('Feed:',j.get('feed'),'Active markets:',j.get('active_markets'))
+                  print('Quote events:',j.get('seen'),'Virtual trades:',len(j.get('trades',[])))
+                  print('Virtual equity:',j.get('equity'),'Net P&L:',j.get('pnl'))
+                  assert j.get('mode')=='PAPER ONLY'
+                  assert j.get('active_markets',0)>0, 'No fresh market quotes'
+                  assert j.get('seen',0)>0, 'No price messages processed'
+                  print('PASS: live Kraken quotes received by Railway simulator')
+                  break
+              except Exception as e:
+                  print('Attempt',i+1,'failed:',str(e))
+                  if i==8: raise
+                  time.sleep(10)
+          PY
