@@ -29,6 +29,7 @@ jobs:
                   assert j.get('active_markets',0)>0
                   assert j.get('seen',0)>0
                   assert j.get('maker_shadow',{}).get('mode')=='PAPER ONLY MAKER SHADOW'
+                  assert j['maker_shadow'].get('max_new_orders_day')==160, 'Old maker build still deployed'
                   assert 'BTC/USD' in j.get('sparklines',{})
                   assert 'equity_sparkline' in j
                   assert j.get('stats') is not None
