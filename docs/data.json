@@ -2,59 +2,58 @@
   "name": "TALON",
   "mode": "PAPER ONLY",
   "status": "SCANNING",
-  "updated": "2026-10-13T01:35:34Z",
-  "last_data": "2026-10-13T01:00:00Z",
-  "equity": 9996.38,
-  "pnl": -3.62,
-  "cash": 7997.11,
-  "drawdown": 0.1,
-  "completed": 2,
-  "position": {
-    "symbol": "SOL",
-    "side": "SHORT",
-    "entry": 102.74714999999999,
-    "qty": 19.47769772012659,
-    "stop": 104.78757857142855,
-    "target": 98.66629285714285,
-    "margin": 2001.2779293045044,
-    "entry_fee": 8.005111717218018,
-    "at": "2026-10-13T01:00:00Z",
-    "entry_t": 1791849600,
-    "bars": 0
-  },
+  "updated": "2026-10-13T02:35:10Z",
+  "last_data": "2026-10-13T02:00:00Z",
+  "equity": 9948.43,
+  "pnl": -51.57,
+  "cash": 9948.43,
+  "drawdown": 0.58,
+  "completed": 3,
+  "position": null,
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 81343.7,
-      "candle": "2026-10-13T01:00:00Z",
-      "signal": "SHORT"
+      "price": 82345.3,
+      "candle": "2026-10-13T02:00:00Z",
+      "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 2418.71,
-      "candle": "2026-10-13T01:00:00Z",
-      "signal": "SHORT"
+      "price": 2461.51,
+      "candle": "2026-10-13T02:00:00Z",
+      "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 102.85,
-      "candle": "2026-10-13T01:00:00Z",
-      "signal": "SHORT"
+      "price": 105.23,
+      "candle": "2026-10-13T02:00:00Z",
+      "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 725.33,
-      "candle": "2026-10-13T01:00:00Z",
-      "signal": "SHORT"
+      "price": 735.29,
+      "candle": "2026-10-13T02:00:00Z",
+      "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 80.27,
-      "candle": "2026-10-13T01:00:00Z",
-      "signal": "SHORT"
+      "price": 81.69,
+      "candle": "2026-10-13T02:00:00Z",
+      "signal": "WAIT"
     }
   },
   "trades": [
+    {
+      "symbol": "SOL",
+      "side": "SHORT",
+      "entry": 102.74714999999999,
+      "exit": 104.89236614999997,
+      "qty": 19.47769772012659,
+      "entered": "2026-10-13T01:00:00Z",
+      "exited": "2026-10-13T02:00:00Z",
+      "pnl": -57.9612,
+      "reason": "STOP"
+    },
     {
       "symbol": "SOL",
       "side": "SHORT",
@@ -198,10 +197,19 @@
     {
       "t": 1791849600,
       "equity": 9996.3813
+    },
+    {
+      "t": 1791853200,
+      "equity": 9948.4284
     }
   ],
   "errors": {},
   "events": [
+    {
+      "at": "2026-10-13T02:00:00Z",
+      "kind": "EXIT",
+      "message": "PAPER SHORT SOL STOP"
+    },
     {
       "at": "2026-10-13T01:00:00Z",
       "kind": "ENTRY",
