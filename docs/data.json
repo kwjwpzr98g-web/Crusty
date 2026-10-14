@@ -2,44 +2,56 @@
   "name": "TALON",
   "mode": "PAPER ONLY",
   "status": "SCANNING",
-  "updated": "2026-10-14T12:56:08Z",
-  "last_data": "2026-10-14T12:00:00Z",
-  "equity": 9948.43,
-  "pnl": -51.57,
-  "cash": 9948.43,
-  "drawdown": 0.58,
+  "updated": "2026-10-14T13:49:49Z",
+  "last_data": "2026-10-14T13:00:00Z",
+  "equity": 9938.48,
+  "pnl": -61.52,
+  "cash": 7950.78,
+  "drawdown": 0.68,
   "completed": 3,
-  "position": null,
+  "position": {
+    "symbol": "SOL",
+    "side": "SHORT",
+    "entry": 105.23466,
+    "qty": 18.90713271822648,
+    "stop": 106.67980285714286,
+    "target": 102.3443742857143,
+    "margin": 1989.6856831774396,
+    "entry_fee": 7.958742732709759,
+    "at": "2026-10-14T13:00:00Z",
+    "entry_t": 1791979200,
+    "bars": 0
+  },
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 83390.9,
-      "candle": "2026-10-14T12:00:00Z",
+      "price": 82645.9,
+      "candle": "2026-10-14T13:00:00Z",
       "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 2502.17,
-      "candle": "2026-10-14T12:00:00Z",
-      "signal": "WAIT"
+      "price": 2473.72,
+      "candle": "2026-10-14T13:00:00Z",
+      "signal": "SHORT"
     },
     "SOL": {
       "status": "READY",
-      "price": 107.06,
-      "candle": "2026-10-14T12:00:00Z",
-      "signal": "WAIT"
+      "price": 105.34,
+      "candle": "2026-10-14T13:00:00Z",
+      "signal": "SHORT"
     },
     "BNB": {
       "status": "READY",
-      "price": 742.01,
-      "candle": "2026-10-14T12:00:00Z",
-      "signal": "WAIT"
+      "price": 736.32,
+      "candle": "2026-10-14T13:00:00Z",
+      "signal": "SHORT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 81.63,
-      "candle": "2026-10-14T12:00:00Z",
-      "signal": "WAIT"
+      "price": 80.64,
+      "candle": "2026-10-14T13:00:00Z",
+      "signal": "SHORT"
     }
   },
   "trades": [
@@ -337,10 +349,19 @@
     {
       "t": 1791975600,
       "equity": 9948.4284
+    },
+    {
+      "t": 1791979200,
+      "equity": 9938.478
     }
   ],
   "errors": {},
   "events": [
+    {
+      "at": "2026-10-14T13:00:00Z",
+      "kind": "ENTRY",
+      "message": "PAPER SHORT SOL"
+    },
     {
       "at": "2026-10-13T02:00:00Z",
       "kind": "EXIT",
