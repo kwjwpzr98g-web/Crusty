@@ -2,12 +2,12 @@
   "name": "TALON",
   "mode": "PAPER ONLY",
   "status": "SCANNING",
-  "updated": "2026-10-15T13:54:21Z",
-  "last_data": "2026-10-15T13:00:00Z",
-  "equity": 10006.64,
-  "pnl": 6.64,
+  "updated": "2026-10-15T14:48:13Z",
+  "last_data": "2026-10-15T14:00:00Z",
+  "equity": 10010.51,
+  "pnl": 10.51,
   "cash": 7980.36,
-  "drawdown": 0.04,
+  "drawdown": 0.01,
   "completed": 4,
   "position": {
     "symbol": "SOL",
@@ -20,38 +20,38 @@
     "entry_fee": 7.988347004204395,
     "at": "2026-10-15T03:00:00Z",
     "entry_t": 1792029600,
-    "bars": 10
+    "bars": 11
   },
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 80465.5,
-      "candle": "2026-10-15T13:00:00Z",
-      "signal": "WAIT"
+      "price": 80114.6,
+      "candle": "2026-10-15T14:00:00Z",
+      "signal": "SHORT"
     },
     "ETH": {
       "status": "READY",
-      "price": 2347.05,
-      "candle": "2026-10-15T13:00:00Z",
+      "price": 2337.72,
+      "candle": "2026-10-15T14:00:00Z",
       "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 101.57,
-      "candle": "2026-10-15T13:00:00Z",
+      "price": 101.37,
+      "candle": "2026-10-15T14:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 717.29,
-      "candle": "2026-10-15T13:00:00Z",
+      "price": 714.05,
+      "candle": "2026-10-15T14:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 78.19,
-      "candle": "2026-10-15T13:00:00Z",
-      "signal": "WAIT"
+      "price": 77.73,
+      "candle": "2026-10-15T14:00:00Z",
+      "signal": "SHORT"
     }
   },
   "trades": [
@@ -460,6 +460,10 @@
     {
       "t": 1792065600,
       "equity": 10006.6397
+    },
+    {
+      "t": 1792069200,
+      "equity": 10010.5146
     }
   ],
   "errors": {},
