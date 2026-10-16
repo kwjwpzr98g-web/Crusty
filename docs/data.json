@@ -2,43 +2,55 @@
   "name": "TALON",
   "mode": "PAPER ONLY",
   "status": "SCANNING",
-  "updated": "2026-10-16T11:46:17Z",
-  "last_data": "2026-10-16T11:00:00Z",
-  "equity": 9926.59,
-  "pnl": -73.41,
-  "cash": 9926.59,
-  "drawdown": 0.84,
+  "updated": "2026-10-16T12:58:21Z",
+  "last_data": "2026-10-16T12:00:00Z",
+  "equity": 9916.67,
+  "pnl": -83.33,
+  "cash": 7933.33,
+  "drawdown": 0.94,
   "completed": 5,
-  "position": null,
+  "position": {
+    "symbol": "ETH",
+    "side": "LONG",
+    "entry": 2477.1746999999996,
+    "qty": 0.8014448727679826,
+    "stop": 2452.2999857142854,
+    "target": 2526.9241285714284,
+    "margin": 1985.318962265565,
+    "entry_fee": 7.941275849062261,
+    "at": "2026-10-16T12:00:00Z",
+    "entry_t": 1792148400,
+    "bars": 0
+  },
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 82124.5,
-      "candle": "2026-10-16T11:00:00Z",
+      "price": 82531.7,
+      "candle": "2026-10-16T12:00:00Z",
       "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 2462.23,
-      "candle": "2026-10-16T11:00:00Z",
-      "signal": "WAIT"
+      "price": 2474.7,
+      "candle": "2026-10-16T12:00:00Z",
+      "signal": "LONG"
     },
     "SOL": {
       "status": "READY",
-      "price": 106.66,
-      "candle": "2026-10-16T11:00:00Z",
+      "price": 106.48,
+      "candle": "2026-10-16T12:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 731.81,
-      "candle": "2026-10-16T11:00:00Z",
+      "price": 731.21,
+      "candle": "2026-10-16T12:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 81.77,
-      "candle": "2026-10-16T11:00:00Z",
+      "price": 81.87,
+      "candle": "2026-10-16T12:00:00Z",
       "signal": "WAIT"
     }
   },
@@ -547,10 +559,19 @@
     {
       "t": 1792144800,
       "equity": 9926.5948
+    },
+    {
+      "t": 1792148400,
+      "equity": 9916.6702
     }
   ],
   "errors": {},
   "events": [
+    {
+      "at": "2026-10-16T12:00:00Z",
+      "kind": "ENTRY",
+      "message": "PAPER LONG ETH"
+    },
     {
       "at": "2026-10-15T16:00:00Z",
       "kind": "EXIT",
