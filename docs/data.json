@@ -2,59 +2,58 @@
   "name": "TALON",
   "mode": "PAPER ONLY",
   "status": "SCANNING",
-  "updated": "2026-10-16T13:52:02Z",
-  "last_data": "2026-10-16T13:00:00Z",
-  "equity": 9904.77,
-  "pnl": -95.23,
-  "cash": 7933.33,
-  "drawdown": 1.06,
-  "completed": 5,
-  "position": {
-    "symbol": "ETH",
-    "side": "LONG",
-    "entry": 2477.1746999999996,
-    "qty": 0.8014448727679826,
-    "stop": 2452.2999857142854,
-    "target": 2526.9241285714284,
-    "margin": 1985.318962265565,
-    "entry_fee": 7.941275849062261,
-    "at": "2026-10-16T12:00:00Z",
-    "entry_t": 1792148400,
-    "bars": 1
-  },
+  "updated": "2026-10-16T14:48:20Z",
+  "last_data": "2026-10-16T14:00:00Z",
+  "equity": 9888.9,
+  "pnl": -111.1,
+  "cash": 9888.9,
+  "drawdown": 1.22,
+  "completed": 6,
+  "position": null,
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 81949.8,
-      "candle": "2026-10-16T13:00:00Z",
+      "price": 81932.0,
+      "candle": "2026-10-16T14:00:00Z",
       "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 2459.85,
-      "candle": "2026-10-16T13:00:00Z",
+      "price": 2455.72,
+      "candle": "2026-10-16T14:00:00Z",
       "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 105.53,
-      "candle": "2026-10-16T13:00:00Z",
+      "price": 105.59,
+      "candle": "2026-10-16T14:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 727.46,
-      "candle": "2026-10-16T13:00:00Z",
+      "price": 726.73,
+      "candle": "2026-10-16T14:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 81.29,
-      "candle": "2026-10-16T13:00:00Z",
+      "price": 81.11,
+      "candle": "2026-10-16T14:00:00Z",
       "signal": "WAIT"
     }
   },
   "trades": [
+    {
+      "symbol": "ETH",
+      "side": "LONG",
+      "entry": 2477.1746999999996,
+      "exit": 2449.847685728571,
+      "qty": 0.8014448727679826,
+      "entered": "2026-10-16T12:00:00Z",
+      "exited": "2026-10-16T14:00:00Z",
+      "pnl": -37.696,
+      "reason": "STOP"
+    },
     {
       "symbol": "SOL",
       "side": "SHORT",
@@ -567,10 +566,19 @@
     {
       "t": 1792152000,
       "equity": 9904.7687
+    },
+    {
+      "t": 1792155600,
+      "equity": 9888.8988
     }
   ],
   "errors": {},
   "events": [
+    {
+      "at": "2026-10-16T14:00:00Z",
+      "kind": "EXIT",
+      "message": "PAPER LONG ETH STOP"
+    },
     {
       "at": "2026-10-16T12:00:00Z",
       "kind": "ENTRY",
