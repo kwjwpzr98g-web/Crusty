@@ -2,44 +2,56 @@
   "name": "TALON",
   "mode": "PAPER ONLY",
   "status": "SCANNING",
-  "updated": "2026-10-18T16:43:14Z",
-  "last_data": "2026-10-18T16:00:00Z",
-  "equity": 9853.28,
-  "pnl": -146.72,
-  "cash": 9853.28,
-  "drawdown": 1.58,
+  "updated": "2026-10-18T17:39:57Z",
+  "last_data": "2026-10-18T17:00:00Z",
+  "equity": 9843.43,
+  "pnl": -156.57,
+  "cash": 7874.74,
+  "drawdown": 1.67,
   "completed": 7,
-  "position": null,
+  "position": {
+    "symbol": "HYPE",
+    "side": "SHORT",
+    "entry": 76.94297999999999,
+    "qty": 25.611909696976866,
+    "stop": 77.92655142857141,
+    "target": 74.97583714285715,
+    "margin": 1970.6566555762968,
+    "entry_fee": 7.882626622305187,
+    "at": "2026-10-18T17:00:00Z",
+    "entry_t": 1792339200,
+    "bars": 0
+  },
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 81080.1,
-      "candle": "2026-10-18T16:00:00Z",
+      "price": 80975.0,
+      "candle": "2026-10-18T17:00:00Z",
       "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 2376.41,
-      "candle": "2026-10-18T16:00:00Z",
+      "price": 2363.36,
+      "candle": "2026-10-18T17:00:00Z",
       "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 102.1,
-      "candle": "2026-10-18T16:00:00Z",
+      "price": 101.97,
+      "candle": "2026-10-18T17:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 712.13,
-      "candle": "2026-10-18T16:00:00Z",
+      "price": 710.68,
+      "candle": "2026-10-18T17:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 77.49,
-      "candle": "2026-10-18T16:00:00Z",
-      "signal": "WAIT"
+      "price": 77.02,
+      "candle": "2026-10-18T17:00:00Z",
+      "signal": "SHORT"
     }
   },
   "trades": [
@@ -781,10 +793,19 @@
     {
       "t": 1792335600,
       "equity": 9853.2833
+    },
+    {
+      "t": 1792339200,
+      "equity": 9843.428
     }
   ],
   "errors": {},
   "events": [
+    {
+      "at": "2026-10-18T17:00:00Z",
+      "kind": "ENTRY",
+      "message": "PAPER SHORT HYPE"
+    },
     {
       "at": "2026-10-18T04:00:00Z",
       "kind": "EXIT",
