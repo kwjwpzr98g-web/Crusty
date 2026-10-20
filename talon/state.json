@@ -6,7 +6,7 @@
   "initial": 10000.0,
   "day_start": 9810.222286267961,
   "day": "2026-10-20",
-  "last_ts": 1792486800,
+  "last_ts": 1792490400,
   "position": null,
   "trades": [
     {
@@ -926,6 +926,10 @@
     {
       "t": 1792486800,
       "equity": 9810.2223
+    },
+    {
+      "t": 1792490400,
+      "equity": 9810.2223
     }
   ],
   "events": [
@@ -1018,32 +1022,32 @@
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 81383.0,
-      "candle": "2026-10-20T10:00:00Z",
+      "price": 81448.6,
+      "candle": "2026-10-20T11:00:00Z",
       "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 2380.73,
-      "candle": "2026-10-20T10:00:00Z",
+      "price": 2384.13,
+      "candle": "2026-10-20T11:00:00Z",
       "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 103.91,
-      "candle": "2026-10-20T10:00:00Z",
+      "price": 104.13,
+      "candle": "2026-10-20T11:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 726.65,
-      "candle": "2026-10-20T10:00:00Z",
+      "price": 728.24,
+      "candle": "2026-10-20T11:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 78.27,
-      "candle": "2026-10-20T10:00:00Z",
+      "price": 78.3,
+      "candle": "2026-10-20T11:00:00Z",
       "signal": "WAIT"
     }
   },
@@ -1051,6 +1055,6 @@
   "paused": false,
   "locked": false,
   "lock_reason": null,
-  "last_scan": "2026-10-20T10:46:07Z",
-  "last_data": "2026-10-20T10:00:00Z"
+  "last_scan": "2026-10-20T11:45:54Z",
+  "last_data": "2026-10-20T11:00:00Z"
 }
