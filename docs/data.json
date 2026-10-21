@@ -2,44 +2,56 @@
   "name": "TALON",
   "mode": "PAPER ONLY",
   "status": "SCANNING",
-  "updated": "2026-10-21T01:47:36Z",
-  "last_data": "2026-10-21T01:00:00Z",
-  "equity": 9768.41,
-  "pnl": -231.59,
-  "cash": 9768.41,
-  "drawdown": 2.42,
+  "updated": "2026-10-21T02:45:56Z",
+  "last_data": "2026-10-21T02:00:00Z",
+  "equity": 9758.65,
+  "pnl": -241.35,
+  "cash": 7806.92,
+  "drawdown": 2.52,
   "completed": 9,
-  "position": null,
+  "position": {
+    "symbol": "HYPE",
+    "side": "LONG",
+    "entry": 81.90181999999999,
+    "qty": 23.853961714992646,
+    "stop": 80.08381999999999,
+    "target": 85.53781999999998,
+    "margin": 1953.6828786682188,
+    "entry_fee": 7.814731514672875,
+    "at": "2026-10-21T02:00:00Z",
+    "entry_t": 1792544400,
+    "bars": 0
+  },
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 82935.8,
-      "candle": "2026-10-21T01:00:00Z",
+      "price": 82908.1,
+      "candle": "2026-10-21T02:00:00Z",
       "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 2450.42,
-      "candle": "2026-10-21T01:00:00Z",
+      "price": 2452.95,
+      "candle": "2026-10-21T02:00:00Z",
       "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 106.53,
-      "candle": "2026-10-21T01:00:00Z",
+      "price": 106.61,
+      "candle": "2026-10-21T02:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 742.31,
-      "candle": "2026-10-21T01:00:00Z",
+      "price": 742.32,
+      "candle": "2026-10-21T02:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 81.06,
-      "candle": "2026-10-21T01:00:00Z",
-      "signal": "WAIT"
+      "price": 81.82,
+      "candle": "2026-10-21T02:00:00Z",
+      "signal": "LONG"
     }
   },
   "trades": [
@@ -1031,10 +1043,19 @@
     {
       "t": 1792540800,
       "equity": 9768.4144
+    },
+    {
+      "t": 1792544400,
+      "equity": 9758.6479
     }
   ],
   "errors": {},
   "events": [
+    {
+      "at": "2026-10-21T02:00:00Z",
+      "kind": "ENTRY",
+      "message": "PAPER LONG HYPE"
+    },
     {
       "at": "2026-10-20T16:00:00Z",
       "kind": "EXIT",
