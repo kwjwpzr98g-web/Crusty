@@ -1,12 +1,12 @@
 {
   "mode": "PAPER ONLY",
   "cash": 7806.916783158201,
-  "equity": 9730.500255855208,
+  "equity": 9731.454414323807,
   "peak": 10011.095846933435,
   "initial": 10000.0,
-  "day_start": 9768.414393341092,
-  "day": "2026-10-21",
-  "last_ts": 1792623600,
+  "day_start": 9730.500255855208,
+  "day": "2026-10-22",
+  "last_ts": 1792627200,
   "position": {
     "symbol": "HYPE",
     "side": "LONG",
@@ -18,7 +18,7 @@
     "entry_fee": 7.814731514672875,
     "at": "2026-10-21T02:00:00Z",
     "entry_t": 1792544400,
-    "bars": 22
+    "bars": 23
   },
   "trades": [
     {
@@ -1101,6 +1101,10 @@
     {
       "t": 1792623600,
       "equity": 9730.5003
+    },
+    {
+      "t": 1792627200,
+      "equity": 9731.4544
     }
   ],
   "events": [
@@ -1208,32 +1212,32 @@
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 84022.5,
-      "candle": "2026-10-22T00:00:00Z",
+      "price": 84150.1,
+      "candle": "2026-10-22T01:00:00Z",
       "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 2471.7,
-      "candle": "2026-10-22T00:00:00Z",
+      "price": 2472.2,
+      "candle": "2026-10-22T01:00:00Z",
       "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 106.88,
-      "candle": "2026-10-22T00:00:00Z",
+      "price": 107.13,
+      "candle": "2026-10-22T01:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 745.65,
-      "candle": "2026-10-22T00:00:00Z",
+      "price": 748.0,
+      "candle": "2026-10-22T01:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 80.64,
-      "candle": "2026-10-22T00:00:00Z",
+      "price": 80.68,
+      "candle": "2026-10-22T01:00:00Z",
       "signal": "WAIT"
     }
   },
@@ -1241,6 +1245,6 @@
   "paused": false,
   "locked": false,
   "lock_reason": null,
-  "last_scan": "2026-10-22T00:58:13Z",
-  "last_data": "2026-10-22T00:00:00Z"
+  "last_scan": "2026-10-22T01:47:16Z",
+  "last_data": "2026-10-22T01:00:00Z"
 }
