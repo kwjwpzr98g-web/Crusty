@@ -2,12 +2,12 @@
   "name": "TALON",
   "mode": "PAPER ONLY",
   "status": "SCANNING",
-  "updated": "2026-10-22T17:43:27Z",
-  "last_data": "2026-10-22T17:00:00Z",
-  "equity": 9697.98,
-  "pnl": -302.02,
+  "updated": "2026-10-22T18:54:59Z",
+  "last_data": "2026-10-22T18:00:00Z",
+  "equity": 9698.74,
+  "pnl": -301.26,
   "cash": 7758.39,
-  "drawdown": 3.13,
+  "drawdown": 3.12,
   "completed": 10,
   "position": {
     "symbol": "HYPE",
@@ -20,38 +20,38 @@
     "entry_fee": 7.766151375050173,
     "at": "2026-10-22T17:00:00Z",
     "entry_t": 1792684800,
-    "bars": 0
+    "bars": 1
   },
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 81174.6,
-      "candle": "2026-10-22T17:00:00Z",
-      "signal": "SHORT"
+      "price": 81102.4,
+      "candle": "2026-10-22T18:00:00Z",
+      "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 2377.42,
-      "candle": "2026-10-22T17:00:00Z",
-      "signal": "SHORT"
+      "price": 2377.06,
+      "candle": "2026-10-22T18:00:00Z",
+      "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 103.72,
-      "candle": "2026-10-22T17:00:00Z",
+      "price": 103.49,
+      "candle": "2026-10-22T18:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 728.26,
-      "candle": "2026-10-22T17:00:00Z",
-      "signal": "SHORT"
+      "price": 727.98,
+      "candle": "2026-10-22T18:00:00Z",
+      "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 77.1,
-      "candle": "2026-10-22T17:00:00Z",
-      "signal": "SHORT"
+      "price": 77.07,
+      "candle": "2026-10-22T18:00:00Z",
+      "signal": "WAIT"
     }
   },
   "trades": [
@@ -1214,6 +1214,10 @@
     {
       "t": 1792684800,
       "equity": 9697.9796
+    },
+    {
+      "t": 1792688400,
+      "equity": 9698.7358
     }
   ],
   "errors": {},
