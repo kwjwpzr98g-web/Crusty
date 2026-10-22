@@ -2,44 +2,56 @@
   "name": "TALON",
   "mode": "PAPER ONLY",
   "status": "SCANNING",
-  "updated": "2026-10-22T16:48:22Z",
-  "last_data": "2026-10-22T16:00:00Z",
-  "equity": 9707.69,
-  "pnl": -292.31,
-  "cash": 9707.69,
-  "drawdown": 3.03,
+  "updated": "2026-10-22T17:43:27Z",
+  "last_data": "2026-10-22T17:00:00Z",
+  "equity": 9697.98,
+  "pnl": -302.02,
+  "cash": 7758.39,
+  "drawdown": 3.13,
   "completed": 10,
-  "position": null,
+  "position": {
+    "symbol": "HYPE",
+    "side": "SHORT",
+    "entry": 77.02289999999999,
+    "qty": 25.20728048103283,
+    "stop": 78.20832857142857,
+    "target": 74.65204285714286,
+    "margin": 1941.5378437625432,
+    "entry_fee": 7.766151375050173,
+    "at": "2026-10-22T17:00:00Z",
+    "entry_t": 1792684800,
+    "bars": 0
+  },
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 81581.6,
-      "candle": "2026-10-22T16:00:00Z",
-      "signal": "WAIT"
+      "price": 81174.6,
+      "candle": "2026-10-22T17:00:00Z",
+      "signal": "SHORT"
     },
     "ETH": {
       "status": "READY",
-      "price": 2396.16,
-      "candle": "2026-10-22T16:00:00Z",
-      "signal": "WAIT"
+      "price": 2377.42,
+      "candle": "2026-10-22T17:00:00Z",
+      "signal": "SHORT"
     },
     "SOL": {
       "status": "READY",
-      "price": 104.51,
-      "candle": "2026-10-22T16:00:00Z",
+      "price": 103.72,
+      "candle": "2026-10-22T17:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 730.32,
-      "candle": "2026-10-22T16:00:00Z",
-      "signal": "WAIT"
+      "price": 728.26,
+      "candle": "2026-10-22T17:00:00Z",
+      "signal": "SHORT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 78.2,
-      "candle": "2026-10-22T16:00:00Z",
-      "signal": "WAIT"
+      "price": 77.1,
+      "candle": "2026-10-22T17:00:00Z",
+      "signal": "SHORT"
     }
   },
   "trades": [
@@ -1198,10 +1210,19 @@
     {
       "t": 1792681200,
       "equity": 9707.6892
+    },
+    {
+      "t": 1792684800,
+      "equity": 9697.9796
     }
   ],
   "errors": {},
   "events": [
+    {
+      "at": "2026-10-22T17:00:00Z",
+      "kind": "ENTRY",
+      "message": "PAPER SHORT HYPE"
+    },
     {
       "at": "2026-10-22T02:00:00Z",
       "kind": "EXIT",
