@@ -2,59 +2,58 @@
   "name": "TALON",
   "mode": "PAPER ONLY",
   "status": "SCANNING",
-  "updated": "2026-10-22T01:47:16Z",
-  "last_data": "2026-10-22T01:00:00Z",
-  "equity": 9731.45,
-  "pnl": -268.55,
-  "cash": 7806.92,
-  "drawdown": 2.79,
-  "completed": 9,
-  "position": {
-    "symbol": "HYPE",
-    "side": "LONG",
-    "entry": 81.90181999999999,
-    "qty": 23.853961714992646,
-    "stop": 80.08381999999999,
-    "target": 85.53781999999998,
-    "margin": 1953.6828786682188,
-    "entry_fee": 7.814731514672875,
-    "at": "2026-10-21T02:00:00Z",
-    "entry_t": 1792544400,
-    "bars": 23
-  },
+  "updated": "2026-10-22T02:46:36Z",
+  "last_data": "2026-10-22T02:00:00Z",
+  "equity": 9707.69,
+  "pnl": -292.31,
+  "cash": 9707.69,
+  "drawdown": 3.03,
+  "completed": 10,
+  "position": null,
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 84150.1,
-      "candle": "2026-10-22T01:00:00Z",
+      "price": 83345.7,
+      "candle": "2026-10-22T02:00:00Z",
       "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 2472.2,
-      "candle": "2026-10-22T01:00:00Z",
+      "price": 2450.03,
+      "candle": "2026-10-22T02:00:00Z",
       "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 107.13,
-      "candle": "2026-10-22T01:00:00Z",
+      "price": 106.1,
+      "candle": "2026-10-22T02:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 748.0,
-      "candle": "2026-10-22T01:00:00Z",
+      "price": 744.22,
+      "candle": "2026-10-22T02:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 80.68,
-      "candle": "2026-10-22T01:00:00Z",
+      "price": 80.09,
+      "candle": "2026-10-22T02:00:00Z",
       "signal": "WAIT"
     }
   },
   "trades": [
+    {
+      "symbol": "HYPE",
+      "side": "LONG",
+      "entry": 81.90181999999999,
+      "exit": 80.00373617999999,
+      "qty": 23.853961714992646,
+      "entered": "2026-10-21T02:00:00Z",
+      "exited": "2026-10-22T02:00:00Z",
+      "pnl": -60.7252,
+      "reason": "STOP"
+    },
     {
       "symbol": "SOL",
       "side": "LONG",
@@ -1139,10 +1138,19 @@
     {
       "t": 1792627200,
       "equity": 9731.4544
+    },
+    {
+      "t": 1792630800,
+      "equity": 9707.6892
     }
   ],
   "errors": {},
   "events": [
+    {
+      "at": "2026-10-22T02:00:00Z",
+      "kind": "EXIT",
+      "message": "PAPER LONG HYPE STOP"
+    },
     {
       "at": "2026-10-21T02:00:00Z",
       "kind": "ENTRY",
