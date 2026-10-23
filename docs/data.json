@@ -2,43 +2,55 @@
   "name": "TALON",
   "mode": "PAPER ONLY",
   "status": "SCANNING",
-  "updated": "2026-10-23T22:44:17Z",
-  "last_data": "2026-10-23T22:00:00Z",
-  "equity": 9660.18,
-  "pnl": -339.82,
-  "cash": 9660.18,
-  "drawdown": 3.51,
+  "updated": "2026-10-23T23:42:17Z",
+  "last_data": "2026-10-23T23:00:00Z",
+  "equity": 9650.51,
+  "pnl": -349.49,
+  "cash": 7720.41,
+  "drawdown": 3.6,
   "completed": 11,
-  "position": null,
+  "position": {
+    "symbol": "SOL",
+    "side": "SHORT",
+    "entry": 102.10779,
+    "qty": 18.921527250563503,
+    "stop": 103.40121857142857,
+    "target": 99.52093285714285,
+    "margin": 1932.0353309798154,
+    "entry_fee": 7.728141323919262,
+    "at": "2026-10-23T23:00:00Z",
+    "entry_t": 1792792800,
+    "bars": 0
+  },
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 81286.3,
-      "candle": "2026-10-23T22:00:00Z",
-      "signal": "WAIT"
+      "price": 80738.0,
+      "candle": "2026-10-23T23:00:00Z",
+      "signal": "SHORT"
     },
     "ETH": {
       "status": "READY",
-      "price": 2396.96,
-      "candle": "2026-10-23T22:00:00Z",
-      "signal": "WAIT"
+      "price": 2364.3,
+      "candle": "2026-10-23T23:00:00Z",
+      "signal": "SHORT"
     },
     "SOL": {
       "status": "READY",
-      "price": 103.53,
-      "candle": "2026-10-23T22:00:00Z",
-      "signal": "WAIT"
+      "price": 102.21,
+      "candle": "2026-10-23T23:00:00Z",
+      "signal": "SHORT"
     },
     "BNB": {
       "status": "READY",
-      "price": 740.28,
-      "candle": "2026-10-23T22:00:00Z",
+      "price": 734.83,
+      "candle": "2026-10-23T23:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 77.71,
-      "candle": "2026-10-23T22:00:00Z",
+      "price": 76.75,
+      "candle": "2026-10-23T23:00:00Z",
       "signal": "WAIT"
     }
   },
@@ -1329,10 +1341,19 @@
     {
       "t": 1792789200,
       "equity": 9660.1767
+    },
+    {
+      "t": 1792792800,
+      "equity": 9650.5145
     }
   ],
   "errors": {},
   "events": [
+    {
+      "at": "2026-10-23T23:00:00Z",
+      "kind": "ENTRY",
+      "message": "PAPER SHORT SOL"
+    },
     {
       "at": "2026-10-23T07:00:00Z",
       "kind": "EXIT",
