@@ -1,12 +1,12 @@
 {
   "mode": "PAPER ONLY",
   "cash": 7720.413182595342,
-  "equity": 9666.030196620339,
+  "equity": 9664.327259167787,
   "peak": 10011.095846933435,
   "initial": 10000.0,
   "day_start": 9641.053780649594,
   "day": "2026-10-24",
-  "last_ts": 1792839600,
+  "last_ts": 1792843200,
   "position": {
     "symbol": "SOL",
     "side": "SHORT",
@@ -18,7 +18,7 @@
     "entry_fee": 7.728141323919262,
     "at": "2026-10-23T23:00:00Z",
     "entry_t": 1792792800,
-    "bars": 13
+    "bars": 14
   },
   "trades": [
     {
@@ -1363,6 +1363,10 @@
     {
       "t": 1792839600,
       "equity": 9666.0302
+    },
+    {
+      "t": 1792843200,
+      "equity": 9664.3273
     }
   ],
   "events": [
@@ -1490,32 +1494,32 @@
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 80486.5,
-      "candle": "2026-10-24T12:00:00Z",
+      "price": 80673.5,
+      "candle": "2026-10-24T13:00:00Z",
       "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 2362.56,
-      "candle": "2026-10-24T12:00:00Z",
+      "price": 2366.25,
+      "candle": "2026-10-24T13:00:00Z",
       "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 101.39,
-      "candle": "2026-10-24T12:00:00Z",
+      "price": 101.48,
+      "candle": "2026-10-24T13:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 730.71,
-      "candle": "2026-10-24T12:00:00Z",
+      "price": 731.38,
+      "candle": "2026-10-24T13:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 75.59,
-      "candle": "2026-10-24T12:00:00Z",
+      "price": 75.77,
+      "candle": "2026-10-24T13:00:00Z",
       "signal": "WAIT"
     }
   },
@@ -1523,6 +1527,6 @@
   "paused": false,
   "locked": false,
   "lock_reason": null,
-  "last_scan": "2026-10-24T12:53:40Z",
-  "last_data": "2026-10-24T12:00:00Z"
+  "last_scan": "2026-10-24T13:43:06Z",
+  "last_data": "2026-10-24T13:00:00Z"
 }
