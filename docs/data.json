@@ -2,59 +2,58 @@
   "name": "TALON",
   "mode": "PAPER ONLY",
   "status": "SCANNING",
-  "updated": "2026-10-24T17:41:41Z",
-  "last_data": "2026-10-24T17:00:00Z",
-  "equity": 9672.05,
-  "pnl": -327.95,
-  "cash": 7745.82,
-  "drawdown": 3.39,
-  "completed": 12,
-  "position": {
-    "symbol": "ETH",
-    "side": "SHORT",
-    "entry": 2300.9967,
-    "qty": 0.8424151872038392,
-    "stop": 2320.7851285714287,
-    "target": 2261.419842857143,
-    "margin": 1938.3945657859165,
-    "entry_fee": 7.753578263143666,
-    "at": "2026-10-24T16:00:00Z",
-    "entry_t": 1792854000,
-    "bars": 1
-  },
+  "updated": "2026-10-24T18:47:00Z",
+  "last_data": "2026-10-24T18:00:00Z",
+  "equity": 9657.77,
+  "pnl": -342.23,
+  "cash": 9657.77,
+  "drawdown": 3.53,
+  "completed": 13,
+  "position": null,
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 80114.5,
-      "candle": "2026-10-24T17:00:00Z",
+      "price": 80164.2,
+      "candle": "2026-10-24T18:00:00Z",
       "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 2315.44,
-      "candle": "2026-10-24T17:00:00Z",
+      "price": 2320.21,
+      "candle": "2026-10-24T18:00:00Z",
       "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 100.37,
-      "candle": "2026-10-24T17:00:00Z",
+      "price": 100.39,
+      "candle": "2026-10-24T18:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 723.85,
-      "candle": "2026-10-24T17:00:00Z",
+      "price": 724.6,
+      "candle": "2026-10-24T18:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 75.6,
-      "candle": "2026-10-24T17:00:00Z",
+      "price": 75.53,
+      "candle": "2026-10-24T18:00:00Z",
       "signal": "WAIT"
     }
   },
   "trades": [
+    {
+      "symbol": "ETH",
+      "side": "SHORT",
+      "entry": 2300.9967,
+      "exit": 2323.1059136999997,
+      "qty": 0.8424151872038392,
+      "entered": "2026-10-24T16:00:00Z",
+      "exited": "2026-10-24T18:00:00Z",
+      "pnl": -34.2068,
+      "reason": "STOP"
+    },
     {
       "symbol": "SOL",
       "side": "SHORT",
@@ -1428,10 +1427,19 @@
     {
       "t": 1792857600,
       "equity": 9672.052
+    },
+    {
+      "t": 1792861200,
+      "equity": 9657.766
     }
   ],
   "errors": {},
   "events": [
+    {
+      "at": "2026-10-24T18:00:00Z",
+      "kind": "EXIT",
+      "message": "PAPER SHORT ETH STOP"
+    },
     {
       "at": "2026-10-24T16:00:00Z",
       "kind": "ENTRY",
