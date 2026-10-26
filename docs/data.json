@@ -2,8 +2,8 @@
   "name": "TALON",
   "mode": "PAPER ONLY",
   "status": "SCANNING",
-  "updated": "2026-10-26T16:57:03Z",
-  "last_data": "2026-10-26T16:00:00Z",
+  "updated": "2026-10-26T17:49:40Z",
+  "last_data": "2026-10-26T17:00:00Z",
   "equity": 9622.1,
   "pnl": -377.9,
   "cash": 7692.16,
@@ -20,38 +20,38 @@
     "entry_fee": 7.699863227594274,
     "at": "2026-10-26T15:00:00Z",
     "entry_t": 1793023200,
-    "bars": 1
+    "bars": 2
   },
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 80283.6,
-      "candle": "2026-10-26T16:00:00Z",
+      "price": 80120.1,
+      "candle": "2026-10-26T17:00:00Z",
       "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 2324.08,
-      "candle": "2026-10-26T16:00:00Z",
+      "price": 2318.01,
+      "candle": "2026-10-26T17:00:00Z",
       "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 101.72,
-      "candle": "2026-10-26T16:00:00Z",
+      "price": 101.16,
+      "candle": "2026-10-26T17:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 743.42,
-      "candle": "2026-10-26T16:00:00Z",
+      "price": 743.15,
+      "candle": "2026-10-26T17:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
       "price": 78.36,
-      "candle": "2026-10-26T16:00:00Z",
-      "signal": "LONG"
+      "candle": "2026-10-26T17:00:00Z",
+      "signal": "WAIT"
     }
   },
   "trades": [
@@ -1637,6 +1637,10 @@
     },
     {
       "t": 1793026800,
+      "equity": 9622.1023
+    },
+    {
+      "t": 1793030400,
       "equity": 9622.1023
     }
   ],
