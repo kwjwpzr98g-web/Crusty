@@ -2,44 +2,56 @@
   "name": "TALON",
   "mode": "PAPER ONLY",
   "status": "SCANNING",
-  "updated": "2026-10-26T13:31:27Z",
-  "last_data": "2026-10-26T13:00:00Z",
-  "equity": 9624.83,
-  "pnl": -375.17,
-  "cash": 9624.83,
-  "drawdown": 3.86,
+  "updated": "2026-10-26T15:42:57Z",
+  "last_data": "2026-10-26T15:00:00Z",
+  "equity": 9615.21,
+  "pnl": -384.79,
+  "cash": 7692.16,
+  "drawdown": 3.95,
   "completed": 14,
-  "position": null,
+  "position": {
+    "symbol": "HYPE",
+    "side": "LONG",
+    "entry": 78.15807999999998,
+    "qty": 24.629133761967655,
+    "stop": 76.56507999999998,
+    "target": 81.34407999999999,
+    "margin": 1924.9658068985684,
+    "entry_fee": 7.699863227594274,
+    "at": "2026-10-26T15:00:00Z",
+    "entry_t": 1793023200,
+    "bars": 0
+  },
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 80215.3,
-      "candle": "2026-10-26T13:00:00Z",
+      "price": 80263.0,
+      "candle": "2026-10-26T15:00:00Z",
       "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 2320.73,
-      "candle": "2026-10-26T13:00:00Z",
+      "price": 2323.41,
+      "candle": "2026-10-26T15:00:00Z",
       "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 101.48,
-      "candle": "2026-10-26T13:00:00Z",
+      "price": 101.95,
+      "candle": "2026-10-26T15:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 741.23,
-      "candle": "2026-10-26T13:00:00Z",
+      "price": 743.86,
+      "candle": "2026-10-26T15:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 77.36,
-      "candle": "2026-10-26T13:00:00Z",
-      "signal": "WAIT"
+      "price": 78.08,
+      "candle": "2026-10-26T15:00:00Z",
+      "signal": "LONG"
     }
   },
   "trades": [
@@ -1614,10 +1626,23 @@
     {
       "t": 1793016000,
       "equity": 9624.829
+    },
+    {
+      "t": 1793019600,
+      "equity": 9624.829
+    },
+    {
+      "t": 1793023200,
+      "equity": 9615.2061
     }
   ],
   "errors": {},
   "events": [
+    {
+      "at": "2026-10-26T15:00:00Z",
+      "kind": "ENTRY",
+      "message": "PAPER LONG HYPE"
+    },
     {
       "at": "2026-10-26T09:00:00Z",
       "kind": "EXIT",
