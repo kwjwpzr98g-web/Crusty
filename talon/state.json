@@ -1,13 +1,25 @@
 {
   "mode": "PAPER ONLY",
-  "cash": 9657.766034455686,
-  "equity": 9657.766034455686,
+  "cash": 7718.486614736985,
+  "equity": 9648.106334934537,
   "peak": 10011.095846933435,
   "initial": 10000.0,
   "day_start": 9657.766034455686,
   "day": "2026-10-26",
-  "last_ts": 1792972800,
-  "position": null,
+  "last_ts": 1792976400,
+  "position": {
+    "symbol": "BTC",
+    "side": "SHORT",
+    "entry": 79569.7506,
+    "qty": 0.02427496872022541,
+    "stop": 80206.9458,
+    "target": 78295.3602,
+    "margin": 1931.553206891137,
+    "entry_fee": 7.726212827564549,
+    "at": "2026-10-26T02:00:00Z",
+    "entry_t": 1792976400,
+    "bars": 0
+  },
   "trades": [
     {
       "symbol": "HYPE",
@@ -1521,6 +1533,10 @@
     {
       "t": 1792972800,
       "equity": 9657.766
+    },
+    {
+      "t": 1792976400,
+      "equity": 9648.1063
     }
   ],
   "events": [
@@ -1658,37 +1674,42 @@
       "at": "2026-10-24T18:00:00Z",
       "kind": "EXIT",
       "message": "PAPER SHORT ETH STOP"
+    },
+    {
+      "at": "2026-10-26T02:00:00Z",
+      "kind": "ENTRY",
+      "message": "PAPER SHORT BTC"
     }
   ],
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 80046.1,
-      "candle": "2026-10-26T01:00:00Z",
-      "signal": "WAIT"
+      "price": 79649.4,
+      "candle": "2026-10-26T02:00:00Z",
+      "signal": "SHORT"
     },
     "ETH": {
       "status": "READY",
-      "price": 2326.48,
-      "candle": "2026-10-26T01:00:00Z",
+      "price": 2311.61,
+      "candle": "2026-10-26T02:00:00Z",
       "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 101.4,
-      "candle": "2026-10-26T01:00:00Z",
+      "price": 100.98,
+      "candle": "2026-10-26T02:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 739.15,
-      "candle": "2026-10-26T01:00:00Z",
+      "price": 737.34,
+      "candle": "2026-10-26T02:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 76.44,
-      "candle": "2026-10-26T01:00:00Z",
+      "price": 76.22,
+      "candle": "2026-10-26T02:00:00Z",
       "signal": "WAIT"
     }
   },
@@ -1696,6 +1717,6 @@
   "paused": false,
   "locked": false,
   "lock_reason": null,
-  "last_scan": "2026-10-26T01:56:23Z",
-  "last_data": "2026-10-26T01:00:00Z"
+  "last_scan": "2026-10-26T02:49:34Z",
+  "last_data": "2026-10-26T02:00:00Z"
 }
