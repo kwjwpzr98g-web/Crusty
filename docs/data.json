@@ -2,43 +2,55 @@
   "name": "TALON",
   "mode": "PAPER ONLY",
   "status": "SCANNING",
-  "updated": "2026-10-29T20:56:13Z",
-  "last_data": "2026-10-29T20:00:00Z",
-  "equity": 9723.4,
-  "pnl": -276.6,
-  "cash": 9723.4,
-  "drawdown": 2.87,
+  "updated": "2026-10-29T21:54:45Z",
+  "last_data": "2026-10-29T21:00:00Z",
+  "equity": 9713.67,
+  "pnl": -286.33,
+  "cash": 7770.94,
+  "drawdown": 2.97,
   "completed": 19,
-  "position": null,
+  "position": {
+    "symbol": "BNB",
+    "side": "SHORT",
+    "entry": 696.59271,
+    "qty": 2.791702977459225,
+    "stop": 705.8639957142857,
+    "target": 678.0501385714285,
+    "margin": 1944.6799425833906,
+    "entry_fee": 7.778719770333563,
+    "at": "2026-10-29T21:00:00Z",
+    "entry_t": 1793304000,
+    "bars": 0
+  },
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 80744.1,
-      "candle": "2026-10-29T20:00:00Z",
+      "price": 78759.2,
+      "candle": "2026-10-29T21:00:00Z",
       "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 2334.59,
-      "candle": "2026-10-29T20:00:00Z",
-      "signal": "WAIT"
+      "price": 2255.62,
+      "candle": "2026-10-29T21:00:00Z",
+      "signal": "SHORT"
     },
     "SOL": {
       "status": "READY",
-      "price": 99.72,
-      "candle": "2026-10-29T20:00:00Z",
-      "signal": "WAIT"
+      "price": 96.08,
+      "candle": "2026-10-29T21:00:00Z",
+      "signal": "SHORT"
     },
     "BNB": {
       "status": "READY",
-      "price": 744.32,
-      "candle": "2026-10-29T20:00:00Z",
-      "signal": "WAIT"
+      "price": 697.29,
+      "candle": "2026-10-29T21:00:00Z",
+      "signal": "SHORT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 93.92,
-      "candle": "2026-10-29T20:00:00Z",
+      "price": 92.54,
+      "candle": "2026-10-29T21:00:00Z",
       "signal": "WAIT"
     }
   },
@@ -1985,10 +1997,19 @@
     {
       "t": 1793300400,
       "equity": 9723.3997
+    },
+    {
+      "t": 1793304000,
+      "equity": 9713.6744
     }
   ],
   "errors": {},
   "events": [
+    {
+      "at": "2026-10-29T21:00:00Z",
+      "kind": "ENTRY",
+      "message": "PAPER SHORT BNB"
+    },
     {
       "at": "2026-10-29T18:00:00Z",
       "kind": "EXIT",
@@ -2133,11 +2154,6 @@
       "at": "2026-10-15T16:00:00Z",
       "kind": "EXIT",
       "message": "PAPER SHORT SOL STOP"
-    },
-    {
-      "at": "2026-10-15T03:00:00Z",
-      "kind": "ENTRY",
-      "message": "PAPER SHORT SOL"
     }
   ],
   "lock_reason": null,
