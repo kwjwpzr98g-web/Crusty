@@ -2,59 +2,58 @@
   "name": "TALON",
   "mode": "PAPER ONLY",
   "status": "SCANNING",
-  "updated": "2026-10-31T11:47:29Z",
-  "last_data": "2026-10-31T11:00:00Z",
-  "equity": 9683.29,
-  "pnl": -316.71,
-  "cash": 7736.16,
-  "drawdown": 3.27,
-  "completed": 20,
-  "position": {
-    "symbol": "BTC",
-    "side": "SHORT",
-    "entry": 77722.2,
-    "qty": 0.024908913082414327,
-    "stop": 78979.7957142857,
-    "target": 75207.00857142858,
-    "margin": 1935.9755243740226,
-    "entry_fee": 7.743902097496091,
-    "at": "2026-10-30T00:00:00Z",
-    "entry_t": 1793314800,
-    "bars": 35
-  },
+  "updated": "2026-10-31T13:00:11Z",
+  "last_data": "2026-10-31T13:00:00Z",
+  "equity": 9668.26,
+  "pnl": -331.74,
+  "cash": 9668.26,
+  "drawdown": 3.42,
+  "completed": 21,
+  "position": null,
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 77274.5,
-      "candle": "2026-10-31T11:00:00Z",
+      "price": 77412.6,
+      "candle": "2026-10-31T13:00:00Z",
       "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 2241.76,
-      "candle": "2026-10-31T11:00:00Z",
+      "price": 2249.32,
+      "candle": "2026-10-31T13:00:00Z",
       "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 95.45,
-      "candle": "2026-10-31T11:00:00Z",
+      "price": 95.92,
+      "candle": "2026-10-31T13:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 703.96,
-      "candle": "2026-10-31T11:00:00Z",
+      "price": 704.77,
+      "candle": "2026-10-31T13:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 87.68,
-      "candle": "2026-10-31T11:00:00Z",
+      "price": 87.95,
+      "candle": "2026-10-31T13:00:00Z",
       "signal": "WAIT"
     }
   },
   "trades": [
+    {
+      "symbol": "BTC",
+      "side": "SHORT",
+      "entry": 77722.2,
+      "exit": 77567.5901,
+      "qty": 0.024908913082414327,
+      "entered": "2026-10-30T00:00:00Z",
+      "exited": "2026-10-31T12:00:00Z",
+      "pnl": -11.6212,
+      "reason": "TIME"
+    },
     {
       "symbol": "BNB",
       "side": "SHORT",
@@ -2164,10 +2163,23 @@
     {
       "t": 1793440800,
       "equity": 9683.2854
+    },
+    {
+      "t": 1793444400,
+      "equity": 9668.2564
+    },
+    {
+      "t": 1793448000,
+      "equity": 9668.2564
     }
   ],
   "errors": {},
   "events": [
+    {
+      "at": "2026-10-31T12:00:00Z",
+      "kind": "EXIT",
+      "message": "PAPER SHORT BTC TIME"
+    },
     {
       "at": "2026-10-30T00:00:00Z",
       "kind": "ENTRY",
@@ -2312,11 +2324,6 @@
       "at": "2026-10-16T16:00:00Z",
       "kind": "ENTRY",
       "message": "PAPER SHORT BTC"
-    },
-    {
-      "at": "2026-10-16T14:00:00Z",
-      "kind": "EXIT",
-      "message": "PAPER LONG ETH STOP"
     }
   ],
   "lock_reason": null,
