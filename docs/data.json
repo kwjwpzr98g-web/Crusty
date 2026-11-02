@@ -2,8 +2,8 @@
   "name": "TALON",
   "mode": "PAPER ONLY",
   "status": "SCANNING",
-  "updated": "2026-11-02T15:06:31Z",
-  "last_data": "2026-11-02T15:00:00Z",
+  "updated": "2026-11-02T16:13:36Z",
+  "last_data": "2026-11-02T16:00:00Z",
   "equity": 9553.09,
   "pnl": -446.91,
   "cash": 9553.09,
@@ -13,32 +13,32 @@
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 77728.0,
-      "candle": "2026-11-02T15:00:00Z",
+      "price": 77403.9,
+      "candle": "2026-11-02T16:00:00Z",
       "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 2287.92,
-      "candle": "2026-11-02T15:00:00Z",
+      "price": 2270.29,
+      "candle": "2026-11-02T16:00:00Z",
       "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 94.25,
-      "candle": "2026-11-02T15:00:00Z",
+      "price": 93.42,
+      "candle": "2026-11-02T16:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 703.38,
-      "candle": "2026-11-02T15:00:00Z",
+      "price": 700.98,
+      "candle": "2026-11-02T16:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 86.0,
-      "candle": "2026-11-02T15:00:00Z",
+      "price": 85.57,
+      "candle": "2026-11-02T16:00:00Z",
       "signal": "WAIT"
     }
   },
@@ -309,10 +309,6 @@
     }
   ],
   "history": [
-    {
-      "t": 1791831600,
-      "equity": 9934.933
-    },
     {
       "t": 1791835200,
       "equity": 9931.7854
@@ -2307,6 +2303,10 @@
     },
     {
       "t": 1793628000,
+      "equity": 9553.0949
+    },
+    {
+      "t": 1793631600,
       "equity": 9553.0949
     }
   ],
