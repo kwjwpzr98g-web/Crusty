@@ -2,12 +2,12 @@
   "name": "TALON",
   "mode": "PAPER ONLY",
   "status": "SCANNING",
-  "updated": "2026-11-02T23:48:57Z",
-  "last_data": "2026-11-02T23:00:00Z",
-  "equity": 9545.62,
-  "pnl": -454.38,
+  "updated": "2026-11-03T01:18:15Z",
+  "last_data": "2026-11-03T01:00:00Z",
+  "equity": 9539.18,
+  "pnl": -460.82,
   "cash": 7634.83,
-  "drawdown": 4.65,
+  "drawdown": 4.71,
   "completed": 24,
   "position": {
     "symbol": "SOL",
@@ -20,37 +20,37 @@
     "entry_fee": 7.642475921427884,
     "at": "2026-11-02T18:00:00Z",
     "entry_t": 1793638800,
-    "bars": 5
+    "bars": 7
   },
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 76782.9,
-      "candle": "2026-11-02T23:00:00Z",
+      "price": 77013.8,
+      "candle": "2026-11-03T01:00:00Z",
       "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 2253.05,
-      "candle": "2026-11-02T23:00:00Z",
+      "price": 2254.52,
+      "candle": "2026-11-03T01:00:00Z",
       "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 91.96,
-      "candle": "2026-11-02T23:00:00Z",
+      "price": 92.27,
+      "candle": "2026-11-03T01:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 698.26,
-      "candle": "2026-11-02T23:00:00Z",
+      "price": 698.68,
+      "candle": "2026-11-03T01:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
       "price": 84.21,
-      "candle": "2026-11-02T23:00:00Z",
+      "candle": "2026-11-03T01:00:00Z",
       "signal": "WAIT"
     }
   },
@@ -321,14 +321,6 @@
     }
   ],
   "history": [
-    {
-      "t": 1791860400,
-      "equity": 9948.4284
-    },
-    {
-      "t": 1791864000,
-      "equity": 9948.4284
-    },
     {
       "t": 1791867600,
       "equity": 9948.4284
@@ -2320,6 +2312,14 @@
     {
       "t": 1793656800,
       "equity": 9545.6174
+    },
+    {
+      "t": 1793660400,
+      "equity": 9548.3181
+    },
+    {
+      "t": 1793664000,
+      "equity": 9539.1772
     }
   ],
   "errors": {},
