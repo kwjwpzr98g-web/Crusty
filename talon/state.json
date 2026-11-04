@@ -1,25 +1,13 @@
 {
   "mode": "PAPER ONLY",
-  "cash": 7596.2839797507995,
-  "equity": 9487.027456356574,
+  "cash": 9469.498982316067,
+  "equity": 9469.498982316067,
   "peak": 10011.095846933435,
   "initial": 10000.0,
   "day_start": 9504.859834523022,
   "day": "2026-11-04",
-  "last_ts": 1793761200,
-  "position": {
-    "symbol": "BTC",
-    "side": "SHORT",
-    "entry": 75964.7592,
-    "qty": 0.025024392717414214,
-    "stop": 76690.19777142857,
-    "target": 74513.88205714285,
-    "margin": 1900.9719669046044,
-    "entry_fee": 7.603887867618417,
-    "at": "2026-11-04T03:00:00Z",
-    "entry_t": 1793757600,
-    "bars": 1
-  },
+  "last_ts": 1793764800,
+  "position": null,
   "trades": [
     {
       "symbol": "HYPE",
@@ -294,6 +282,17 @@
       "entered": "2026-11-02T18:00:00Z",
       "exited": "2026-11-03T14:00:00Z",
       "pnl": -48.2351,
+      "reason": "STOP"
+    },
+    {
+      "symbol": "BTC",
+      "side": "SHORT",
+      "entry": 75964.7592,
+      "exit": 76766.88796919999,
+      "qty": 0.025024392717414214,
+      "entered": "2026-11-04T03:00:00Z",
+      "exited": "2026-11-04T05:00:00Z",
+      "pnl": -35.3609,
       "reason": "STOP"
     }
   ],
@@ -2541,6 +2540,10 @@
     {
       "t": 1793761200,
       "equity": 9487.0275
+    },
+    {
+      "t": 1793764800,
+      "equity": 9469.499
     }
   ],
   "events": [
@@ -2803,37 +2806,42 @@
       "at": "2026-11-04T03:00:00Z",
       "kind": "ENTRY",
       "message": "PAPER SHORT BTC"
+    },
+    {
+      "at": "2026-11-04T05:00:00Z",
+      "kind": "EXIT",
+      "message": "PAPER SHORT BTC STOP"
     }
   ],
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 76373.5,
-      "candle": "2026-11-04T04:00:00Z",
+      "price": 77279.2,
+      "candle": "2026-11-04T05:00:00Z",
       "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 2245.85,
-      "candle": "2026-11-04T04:00:00Z",
+      "price": 2276.18,
+      "candle": "2026-11-04T05:00:00Z",
       "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 90.96,
-      "candle": "2026-11-04T04:00:00Z",
+      "price": 92.21,
+      "candle": "2026-11-04T05:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 685.11,
-      "candle": "2026-11-04T04:00:00Z",
-      "signal": "SHORT"
+      "price": 693.5,
+      "candle": "2026-11-04T05:00:00Z",
+      "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 82.68,
-      "candle": "2026-11-04T04:00:00Z",
+      "price": 83.51,
+      "candle": "2026-11-04T05:00:00Z",
       "signal": "WAIT"
     }
   },
@@ -2841,6 +2849,6 @@
   "paused": false,
   "locked": false,
   "lock_reason": null,
-  "last_scan": "2026-11-04T04:06:54Z",
-  "last_data": "2026-11-04T04:00:00Z"
+  "last_scan": "2026-11-04T05:10:43Z",
+  "last_data": "2026-11-04T05:00:00Z"
 }
