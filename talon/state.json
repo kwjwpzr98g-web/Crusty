@@ -1,12 +1,12 @@
 {
   "mode": "PAPER ONLY",
   "cash": 7568.023586667001,
-  "equity": 9459.444228349439,
+  "equity": 9463.994617538228,
   "peak": 10011.095846933435,
   "initial": 10000.0,
   "day_start": 9504.859834523022,
   "day": "2026-11-04",
-  "last_ts": 1793782800,
+  "last_ts": 1793790000,
   "position": {
     "symbol": "ETH",
     "side": "LONG",
@@ -18,7 +18,7 @@
     "entry_fee": 7.575599185852854,
     "at": "2026-11-04T09:00:00Z",
     "entry_t": 1793779200,
-    "bars": 1
+    "bars": 3
   },
   "trades": [
     {
@@ -2576,6 +2576,14 @@
     {
       "t": 1793782800,
       "equity": 9459.4442
+    },
+    {
+      "t": 1793786400,
+      "equity": 9464.1985
+    },
+    {
+      "t": 1793790000,
+      "equity": 9463.9946
     }
   ],
   "events": [
@@ -2853,32 +2861,32 @@
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 78285.0,
-      "candle": "2026-11-04T10:00:00Z",
+      "price": 78372.3,
+      "candle": "2026-11-04T12:00:00Z",
       "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 2319.39,
-      "candle": "2026-11-04T10:00:00Z",
+      "price": 2324.97,
+      "candle": "2026-11-04T12:00:00Z",
       "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 92.99,
-      "candle": "2026-11-04T10:00:00Z",
+      "price": 93.48,
+      "candle": "2026-11-04T12:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 701.26,
-      "candle": "2026-11-04T10:00:00Z",
+      "price": 701.32,
+      "candle": "2026-11-04T12:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 86.55,
-      "candle": "2026-11-04T10:00:00Z",
+      "price": 86.4,
+      "candle": "2026-11-04T12:00:00Z",
       "signal": "WAIT"
     }
   },
@@ -2886,6 +2894,6 @@
   "paused": false,
   "locked": false,
   "lock_reason": null,
-  "last_scan": "2026-11-04T10:18:12Z",
-  "last_data": "2026-11-04T10:00:00Z"
+  "last_scan": "2026-11-04T12:00:25Z",
+  "last_data": "2026-11-04T12:00:00Z"
 }
