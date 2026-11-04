@@ -2,12 +2,12 @@
   "name": "TALON",
   "mode": "PAPER ONLY",
   "status": "SCANNING",
-  "updated": "2026-11-04T13:21:06Z",
-  "last_data": "2026-11-04T13:00:00Z",
-  "equity": 9452.91,
-  "pnl": -547.09,
+  "updated": "2026-11-04T15:02:03Z",
+  "last_data": "2026-11-04T15:00:00Z",
+  "equity": 9506.02,
+  "pnl": -493.98,
   "cash": 7568.02,
-  "drawdown": 5.58,
+  "drawdown": 5.05,
   "completed": 26,
   "position": {
     "symbol": "ETH",
@@ -20,37 +20,37 @@
     "entry_fee": 7.575599185852854,
     "at": "2026-11-04T09:00:00Z",
     "entry_t": 1793779200,
-    "bars": 4
+    "bars": 6
   },
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 78195.8,
-      "candle": "2026-11-04T13:00:00Z",
-      "signal": "WAIT"
+      "price": 79249.3,
+      "candle": "2026-11-04T15:00:00Z",
+      "signal": "LONG"
     },
     "ETH": {
       "status": "READY",
-      "price": 2311.38,
-      "candle": "2026-11-04T13:00:00Z",
-      "signal": "WAIT"
+      "price": 2376.51,
+      "candle": "2026-11-04T15:00:00Z",
+      "signal": "LONG"
     },
     "SOL": {
       "status": "READY",
-      "price": 92.49,
-      "candle": "2026-11-04T13:00:00Z",
+      "price": 95.08,
+      "candle": "2026-11-04T15:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 698.5,
-      "candle": "2026-11-04T13:00:00Z",
+      "price": 709.02,
+      "candle": "2026-11-04T15:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 84.54,
-      "candle": "2026-11-04T13:00:00Z",
+      "price": 86.16,
+      "candle": "2026-11-04T15:00:00Z",
       "signal": "WAIT"
     }
   },
@@ -343,14 +343,6 @@
     }
   ],
   "history": [
-    {
-      "t": 1791997200,
-      "equity": 9958.8977
-    },
-    {
-      "t": 1792000800,
-      "equity": 9959.654
-    },
     {
       "t": 1792004400,
       "equity": 9962.301
@@ -2342,6 +2334,14 @@
     {
       "t": 1793793600,
       "equity": 9452.9122
+    },
+    {
+      "t": 1793797200,
+      "equity": 9456.9325
+    },
+    {
+      "t": 1793800800,
+      "equity": 9506.0246
     }
   ],
   "errors": {},
