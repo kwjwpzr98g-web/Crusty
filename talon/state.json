@@ -1,24 +1,24 @@
 {
   "mode": "PAPER ONLY",
-  "cash": 7597.710832012897,
-  "equity": 9471.430644677652,
+  "cash": 7557.533979532431,
+  "equity": 9446.9155812476,
   "peak": 10011.095846933435,
   "initial": 10000.0,
   "day_start": 9496.490054512553,
   "day": "2026-11-05",
-  "last_ts": 1793880000,
+  "last_ts": 1793887200,
   "position": {
-    "symbol": "ETH",
-    "side": "LONG",
-    "entry": 2426.4139899999996,
-    "qty": 0.7835963050313046,
-    "stop": 2383.8748471428567,
-    "target": 2511.4922757142854,
-    "margin": 1901.3290370402647,
-    "entry_fee": 7.605316148161059,
-    "at": "2026-11-04T16:00:00Z",
-    "entry_t": 1793804400,
-    "bars": 21
+    "symbol": "HYPE",
+    "side": "SHORT",
+    "entry": 80.31960000000001,
+    "qty": 23.54686489540237,
+    "stop": 81.70431428571429,
+    "target": 77.55017142857143,
+    "margin": 1891.2747696527604,
+    "entry_fee": 7.565099078611041,
+    "at": "2026-11-05T15:00:00Z",
+    "entry_t": 1793887200,
+    "bars": 0
   },
   "trades": [
     {
@@ -317,6 +317,17 @@
       "exited": "2026-11-04T16:00:00Z",
       "pnl": 37.1462,
       "reason": "TARGET"
+    },
+    {
+      "symbol": "ETH",
+      "side": "LONG",
+      "entry": 2426.4139899999996,
+      "exit": 2381.4909722957136,
+      "qty": 0.7835963050313046,
+      "entered": "2026-11-04T16:00:00Z",
+      "exited": "2026-11-05T14:00:00Z",
+      "pnl": -50.2713,
+      "reason": "STOP"
     }
   ],
   "history": [
@@ -2695,6 +2706,14 @@
     {
       "t": 1793880000,
       "equity": 9471.4306
+    },
+    {
+      "t": 1793883600,
+      "equity": 9456.3738
+    },
+    {
+      "t": 1793887200,
+      "equity": 9446.9156
     }
   ],
   "events": [
@@ -2977,37 +2996,47 @@
       "at": "2026-11-04T16:00:00Z",
       "kind": "ENTRY",
       "message": "PAPER LONG ETH"
+    },
+    {
+      "at": "2026-11-05T14:00:00Z",
+      "kind": "EXIT",
+      "message": "PAPER LONG ETH STOP"
+    },
+    {
+      "at": "2026-11-05T15:00:00Z",
+      "kind": "ENTRY",
+      "message": "PAPER SHORT HYPE"
     }
   ],
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 79586.0,
-      "candle": "2026-11-05T13:00:00Z",
+      "price": 78195.3,
+      "candle": "2026-11-05T15:00:00Z",
       "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 2391.18,
-      "candle": "2026-11-05T13:00:00Z",
+      "price": 2341.25,
+      "candle": "2026-11-05T15:00:00Z",
       "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 95.24,
-      "candle": "2026-11-05T13:00:00Z",
+      "price": 92.93,
+      "candle": "2026-11-05T15:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 710.11,
-      "candle": "2026-11-05T13:00:00Z",
+      "price": 701.62,
+      "candle": "2026-11-05T15:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 81.72,
-      "candle": "2026-11-05T13:00:00Z",
+      "price": 80.4,
+      "candle": "2026-11-05T15:00:00Z",
       "signal": "SHORT"
     }
   },
@@ -3015,6 +3044,6 @@
   "paused": false,
   "locked": false,
   "lock_reason": null,
-  "last_scan": "2026-11-05T13:26:58Z",
-  "last_data": "2026-11-05T13:00:00Z"
+  "last_scan": "2026-11-05T15:10:49Z",
+  "last_data": "2026-11-05T15:00:00Z"
 }
