@@ -2,10 +2,10 @@
   "name": "TALON",
   "mode": "PAPER ONLY",
   "status": "SCANNING",
-  "updated": "2026-11-06T07:30:03Z",
-  "last_data": "2026-11-06T07:00:00Z",
-  "equity": 9496.03,
-  "pnl": -503.97,
+  "updated": "2026-11-06T09:09:22Z",
+  "last_data": "2026-11-06T09:00:00Z",
+  "equity": 9497.03,
+  "pnl": -502.97,
   "cash": 7596.3,
   "drawdown": 5.14,
   "completed": 29,
@@ -20,37 +20,37 @@
     "entry_fee": 7.603905990635386,
     "at": "2026-11-05T22:00:00Z",
     "entry_t": 1793912400,
-    "bars": 9
+    "bars": 11
   },
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 75600.2,
-      "candle": "2026-11-06T07:00:00Z",
+      "price": 75575.5,
+      "candle": "2026-11-06T09:00:00Z",
       "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 2225.18,
-      "candle": "2026-11-06T07:00:00Z",
+      "price": 2224.01,
+      "candle": "2026-11-06T09:00:00Z",
       "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 89.53,
-      "candle": "2026-11-06T07:00:00Z",
+      "price": 89.45,
+      "candle": "2026-11-06T09:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 689.19,
-      "candle": "2026-11-06T07:00:00Z",
+      "price": 690.96,
+      "candle": "2026-11-06T09:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 77.51,
-      "candle": "2026-11-06T07:00:00Z",
+      "price": 77.49,
+      "candle": "2026-11-06T09:00:00Z",
       "signal": "WAIT"
     }
   },
@@ -376,14 +376,6 @@
     }
   ],
   "history": [
-    {
-      "t": 1792148400,
-      "equity": 9916.6702
-    },
-    {
-      "t": 1792152000,
-      "equity": 9904.7687
-    },
     {
       "t": 1792155600,
       "equity": 9888.8988
@@ -2375,6 +2367,14 @@
     {
       "t": 1793944800,
       "equity": 9496.0254
+    },
+    {
+      "t": 1793948400,
+      "equity": 9494.8628
+    },
+    {
+      "t": 1793952000,
+      "equity": 9497.0256
     }
   ],
   "errors": {},
