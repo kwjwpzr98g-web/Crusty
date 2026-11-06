@@ -2,12 +2,12 @@
   "name": "TALON",
   "mode": "PAPER ONLY",
   "status": "SCANNING",
-  "updated": "2026-11-06T01:25:17Z",
-  "last_data": "2026-11-06T01:00:00Z",
-  "equity": 9480.07,
-  "pnl": -519.93,
+  "updated": "2026-11-06T03:01:20Z",
+  "last_data": "2026-11-06T03:00:00Z",
+  "equity": 9484.03,
+  "pnl": -515.97,
   "cash": 7596.3,
-  "drawdown": 5.3,
+  "drawdown": 5.26,
   "completed": 29,
   "position": {
     "symbol": "ETH",
@@ -20,37 +20,37 @@
     "entry_fee": 7.603905990635386,
     "at": "2026-11-05T22:00:00Z",
     "entry_t": 1793912400,
-    "bars": 3
+    "bars": 5
   },
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 76221.3,
-      "candle": "2026-11-06T01:00:00Z",
+      "price": 76077.5,
+      "candle": "2026-11-06T03:00:00Z",
       "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 2243.84,
-      "candle": "2026-11-06T01:00:00Z",
+      "price": 2239.21,
+      "candle": "2026-11-06T03:00:00Z",
       "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 90.25,
-      "candle": "2026-11-06T01:00:00Z",
+      "price": 90.24,
+      "candle": "2026-11-06T03:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 693.54,
-      "candle": "2026-11-06T01:00:00Z",
+      "price": 694.72,
+      "candle": "2026-11-06T03:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 77.59,
-      "candle": "2026-11-06T01:00:00Z",
+      "price": 77.99,
+      "candle": "2026-11-06T03:00:00Z",
       "signal": "WAIT"
     }
   },
@@ -376,14 +376,6 @@
     }
   ],
   "history": [
-    {
-      "t": 1792126800,
-      "equity": 9926.5948
-    },
-    {
-      "t": 1792130400,
-      "equity": 9926.5948
-    },
     {
       "t": 1792134000,
       "equity": 9926.5948
@@ -2375,6 +2367,14 @@
     {
       "t": 1793923200,
       "equity": 9480.0736
+    },
+    {
+      "t": 1793926800,
+      "equity": 9485.4764
+    },
+    {
+      "t": 1793930400,
+      "equity": 9484.0316
     }
   ],
   "errors": {},
