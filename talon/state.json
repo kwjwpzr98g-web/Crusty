@@ -1,12 +1,12 @@
 {
   "mode": "PAPER ONLY",
   "cash": 7596.30208464475,
-  "equity": 9480.253131707315,
+  "equity": 9481.407200172323,
   "peak": 10011.095846933435,
   "initial": 10000.0,
   "day_start": 9487.263029050324,
   "day": "2026-11-07",
-  "last_ts": 1794013200,
+  "last_ts": 1794020400,
   "position": {
     "symbol": "ETH",
     "side": "SHORT",
@@ -18,7 +18,7 @@
     "entry_fee": 7.603905990635386,
     "at": "2026-11-05T22:00:00Z",
     "entry_t": 1793912400,
-    "bars": 28
+    "bars": 30
   },
   "trades": [
     {
@@ -2865,6 +2865,14 @@
     {
       "t": 1794013200,
       "equity": 9480.2531
+    },
+    {
+      "t": 1794016800,
+      "equity": 9479.9197
+    },
+    {
+      "t": 1794020400,
+      "equity": 9481.4072
     }
   ],
   "events": [
@@ -3172,32 +3180,32 @@
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 75942.4,
-      "candle": "2026-11-07T02:00:00Z",
+      "price": 75803.8,
+      "candle": "2026-11-07T04:00:00Z",
       "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 2243.63,
-      "candle": "2026-11-07T02:00:00Z",
+      "price": 2242.28,
+      "candle": "2026-11-07T04:00:00Z",
       "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 90.46,
-      "candle": "2026-11-07T02:00:00Z",
+      "price": 89.95,
+      "candle": "2026-11-07T04:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 695.04,
-      "candle": "2026-11-07T02:00:00Z",
+      "price": 693.18,
+      "candle": "2026-11-07T04:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 79.03,
-      "candle": "2026-11-07T02:00:00Z",
+      "price": 79.43,
+      "candle": "2026-11-07T04:00:00Z",
       "signal": "WAIT"
     }
   },
@@ -3205,6 +3213,6 @@
   "paused": false,
   "locked": false,
   "lock_reason": null,
-  "last_scan": "2026-11-07T02:59:55Z",
-  "last_data": "2026-11-07T02:00:00Z"
+  "last_scan": "2026-11-07T04:01:42Z",
+  "last_data": "2026-11-07T04:00:00Z"
 }
