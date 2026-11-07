@@ -1,12 +1,12 @@
 {
   "mode": "PAPER ONLY",
   "cash": 7569.3872770829685,
-  "equity": 9460.015573162362,
+  "equity": 9467.372546251583,
   "peak": 10011.095846933435,
   "initial": 10000.0,
   "day_start": 9487.263029050324,
   "day": "2026-11-07",
-  "last_ts": 1794078000,
+  "last_ts": 1794081600,
   "position": {
     "symbol": "HYPE",
     "side": "SHORT",
@@ -18,7 +18,7 @@
     "entry_fee": 7.576964241324292,
     "at": "2026-11-07T16:00:00Z",
     "entry_t": 1794063600,
-    "bars": 4
+    "bars": 5
   },
   "trades": [
     {
@@ -2948,6 +2948,10 @@
     {
       "t": 1794078000,
       "equity": 9460.0156
+    },
+    {
+      "t": 1794081600,
+      "equity": 9467.3725
     }
   ],
   "events": [
@@ -3255,32 +3259,32 @@
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 75690.1,
-      "candle": "2026-11-07T20:00:00Z",
+      "price": 75584.2,
+      "candle": "2026-11-07T21:00:00Z",
       "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 2232.3,
-      "candle": "2026-11-07T20:00:00Z",
-      "signal": "WAIT"
+      "price": 2225.89,
+      "candle": "2026-11-07T21:00:00Z",
+      "signal": "SHORT"
     },
     "SOL": {
       "status": "READY",
-      "price": 89.53,
-      "candle": "2026-11-07T20:00:00Z",
-      "signal": "WAIT"
+      "price": 88.95,
+      "candle": "2026-11-07T21:00:00Z",
+      "signal": "SHORT"
     },
     "BNB": {
       "status": "READY",
-      "price": 696.04,
-      "candle": "2026-11-07T20:00:00Z",
+      "price": 694.45,
+      "candle": "2026-11-07T21:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 77.39,
-      "candle": "2026-11-07T20:00:00Z",
+      "price": 77.09,
+      "candle": "2026-11-07T21:00:00Z",
       "signal": "WAIT"
     }
   },
@@ -3288,6 +3292,6 @@
   "paused": false,
   "locked": false,
   "lock_reason": null,
-  "last_scan": "2026-11-07T20:50:43Z",
-  "last_data": "2026-11-07T20:00:00Z"
+  "last_scan": "2026-11-07T21:48:13Z",
+  "last_data": "2026-11-07T21:00:00Z"
 }
