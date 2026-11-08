@@ -2,10 +2,10 @@
   "name": "TALON",
   "mode": "PAPER ONLY",
   "status": "SCANNING",
-  "updated": "2026-11-08T05:59:06Z",
-  "last_data": "2026-11-08T05:00:00Z",
-  "equity": 9468.35,
-  "pnl": -531.65,
+  "updated": "2026-11-08T07:17:38Z",
+  "last_data": "2026-11-08T07:00:00Z",
+  "equity": 9468.11,
+  "pnl": -531.89,
   "cash": 7569.39,
   "drawdown": 5.42,
   "completed": 30,
@@ -20,37 +20,37 @@
     "entry_fee": 7.576964241324292,
     "at": "2026-11-07T16:00:00Z",
     "entry_t": 1794063600,
-    "bars": 13
+    "bars": 15
   },
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 75748.3,
-      "candle": "2026-11-08T05:00:00Z",
+      "price": 75724.8,
+      "candle": "2026-11-08T07:00:00Z",
       "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 2232.24,
-      "candle": "2026-11-08T05:00:00Z",
+      "price": 2230.89,
+      "candle": "2026-11-08T07:00:00Z",
       "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 88.96,
-      "candle": "2026-11-08T05:00:00Z",
+      "price": 88.94,
+      "candle": "2026-11-08T07:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 694.97,
-      "candle": "2026-11-08T05:00:00Z",
+      "price": 697.48,
+      "candle": "2026-11-08T07:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 77.05,
-      "candle": "2026-11-08T05:00:00Z",
+      "price": 77.06,
+      "candle": "2026-11-08T07:00:00Z",
       "signal": "WAIT"
     }
   },
@@ -387,14 +387,6 @@
     }
   ],
   "history": [
-    {
-      "t": 1792314000,
-      "equity": 9853.2833
-    },
-    {
-      "t": 1792317600,
-      "equity": 9853.2833
-    },
     {
       "t": 1792321200,
       "equity": 9853.2833
@@ -2386,6 +2378,14 @@
     {
       "t": 1794110400,
       "equity": 9468.3535
+    },
+    {
+      "t": 1794114000,
+      "equity": 9464.675
+    },
+    {
+      "t": 1794117600,
+      "equity": 9468.1082
     }
   ],
   "errors": {},
