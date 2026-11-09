@@ -2,7 +2,7 @@
   "name": "TALON",
   "mode": "PAPER ONLY",
   "status": "SCANNING",
-  "updated": "2026-11-09T20:04:20Z",
+  "updated": "2026-11-09T21:03:19Z",
   "last_data": "2026-11-09T20:00:00Z",
   "equity": 9365.67,
   "pnl": -634.33,
@@ -12,34 +12,24 @@
   "position": null,
   "markets": {
     "BTC": {
-      "status": "READY",
-      "price": 74789.5,
-      "candle": "2026-11-09T20:00:00Z",
-      "signal": "WAIT"
+      "status": "UNAVAILABLE",
+      "reason": "The read operation timed out"
     },
     "ETH": {
-      "status": "READY",
-      "price": 2126.19,
-      "candle": "2026-11-09T20:00:00Z",
-      "signal": "WAIT"
+      "status": "UNAVAILABLE",
+      "reason": "The read operation timed out"
     },
     "SOL": {
-      "status": "READY",
-      "price": 86.45,
-      "candle": "2026-11-09T20:00:00Z",
-      "signal": "WAIT"
+      "status": "UNAVAILABLE",
+      "reason": "The read operation timed out"
     },
     "BNB": {
-      "status": "READY",
-      "price": 687.54,
-      "candle": "2026-11-09T20:00:00Z",
-      "signal": "WAIT"
+      "status": "UNAVAILABLE",
+      "reason": "The read operation timed out"
     },
     "HYPE": {
-      "status": "READY",
-      "price": 75.21,
-      "candle": "2026-11-09T20:00:00Z",
-      "signal": "WAIT"
+      "status": "UNAVAILABLE",
+      "reason": "The read operation timed out"
     }
   },
   "trades": [
@@ -2420,7 +2410,13 @@
       "equity": 9365.6721
     }
   ],
-  "errors": {},
+  "errors": {
+    "BTC": "The read operation timed out",
+    "ETH": "The read operation timed out",
+    "SOL": "The read operation timed out",
+    "BNB": "The read operation timed out",
+    "HYPE": "The read operation timed out"
+  },
   "events": [
     {
       "at": "2026-11-09T15:00:00Z",
