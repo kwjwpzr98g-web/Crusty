@@ -2,8 +2,8 @@
   "name": "TALON",
   "mode": "PAPER ONLY",
   "status": "SCANNING",
-  "updated": "2026-11-09T21:03:19Z",
-  "last_data": "2026-11-09T20:00:00Z",
+  "updated": "2026-11-09T21:57:43Z",
+  "last_data": "2026-11-09T21:00:00Z",
   "equity": 9365.67,
   "pnl": -634.33,
   "cash": 9365.67,
@@ -12,24 +12,34 @@
   "position": null,
   "markets": {
     "BTC": {
-      "status": "UNAVAILABLE",
-      "reason": "The read operation timed out"
+      "status": "READY",
+      "price": 74770.7,
+      "candle": "2026-11-09T21:00:00Z",
+      "signal": "WAIT"
     },
     "ETH": {
-      "status": "UNAVAILABLE",
-      "reason": "The read operation timed out"
+      "status": "READY",
+      "price": 2127.82,
+      "candle": "2026-11-09T21:00:00Z",
+      "signal": "WAIT"
     },
     "SOL": {
-      "status": "UNAVAILABLE",
-      "reason": "The read operation timed out"
+      "status": "READY",
+      "price": 86.52,
+      "candle": "2026-11-09T21:00:00Z",
+      "signal": "WAIT"
     },
     "BNB": {
-      "status": "UNAVAILABLE",
-      "reason": "The read operation timed out"
+      "status": "READY",
+      "price": 689.28,
+      "candle": "2026-11-09T21:00:00Z",
+      "signal": "WAIT"
     },
     "HYPE": {
-      "status": "UNAVAILABLE",
-      "reason": "The read operation timed out"
+      "status": "READY",
+      "price": 75.0,
+      "candle": "2026-11-09T21:00:00Z",
+      "signal": "WAIT"
     }
   },
   "trades": [
@@ -409,10 +419,6 @@
     }
   ],
   "history": [
-    {
-      "t": 1792454400,
-      "equity": 9810.2223
-    },
     {
       "t": 1792458000,
       "equity": 9810.2223
@@ -2408,15 +2414,13 @@
     {
       "t": 1794250800,
       "equity": 9365.6721
+    },
+    {
+      "t": 1794254400,
+      "equity": 9365.6721
     }
   ],
-  "errors": {
-    "BTC": "The read operation timed out",
-    "ETH": "The read operation timed out",
-    "SOL": "The read operation timed out",
-    "BNB": "The read operation timed out",
-    "HYPE": "The read operation timed out"
-  },
+  "errors": {},
   "events": [
     {
       "at": "2026-11-09T15:00:00Z",
