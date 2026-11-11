@@ -2,12 +2,12 @@
   "name": "TALON",
   "mode": "PAPER ONLY",
   "status": "SCANNING",
-  "updated": "2026-11-10T20:57:21Z",
-  "last_data": "2026-11-10T20:00:00Z",
-  "equity": 9333.93,
-  "pnl": -666.07,
+  "updated": "2026-11-11T01:15:36Z",
+  "last_data": "2026-11-11T01:00:00Z",
+  "equity": 9337.58,
+  "pnl": -662.42,
   "cash": 7471.73,
-  "drawdown": 6.76,
+  "drawdown": 6.73,
   "completed": 36,
   "position": {
     "symbol": "HYPE",
@@ -20,37 +20,37 @@
     "entry_fee": 7.479212550367417,
     "at": "2026-11-10T16:00:00Z",
     "entry_t": 1794322800,
-    "bars": 4
+    "bars": 9
   },
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 73387.2,
-      "candle": "2026-11-10T20:00:00Z",
+      "price": 73444.0,
+      "candle": "2026-11-11T01:00:00Z",
       "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 2042.5,
-      "candle": "2026-11-10T20:00:00Z",
+      "price": 2047.23,
+      "candle": "2026-11-11T01:00:00Z",
       "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 82.86,
-      "candle": "2026-11-10T20:00:00Z",
+      "price": 83.05,
+      "candle": "2026-11-11T01:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 674.55,
-      "candle": "2026-11-10T20:00:00Z",
+      "price": 678.86,
+      "candle": "2026-11-11T01:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 71.97,
-      "candle": "2026-11-10T20:00:00Z",
+      "price": 71.83,
+      "candle": "2026-11-11T01:00:00Z",
       "signal": "WAIT"
     }
   },
@@ -453,26 +453,6 @@
     }
   ],
   "history": [
-    {
-      "t": 1792540800,
-      "equity": 9768.4144
-    },
-    {
-      "t": 1792544400,
-      "equity": 9758.6479
-    },
-    {
-      "t": 1792548000,
-      "equity": 9754.1157
-    },
-    {
-      "t": 1792551600,
-      "equity": 9741.7116
-    },
-    {
-      "t": 1792555200,
-      "equity": 9731.9315
-    },
     {
       "t": 1792558800,
       "equity": 9729.3076
@@ -2452,6 +2432,26 @@
     {
       "t": 1794337200,
       "equity": 9333.9259
+    },
+    {
+      "t": 1794340800,
+      "equity": 9327.9261
+    },
+    {
+      "t": 1794344400,
+      "equity": 9316.4482
+    },
+    {
+      "t": 1794348000,
+      "equity": 9329.2304
+    },
+    {
+      "t": 1794351600,
+      "equity": 9327.1435
+    },
+    {
+      "t": 1794355200,
+      "equity": 9337.5779
     }
   ],
   "errors": {},
