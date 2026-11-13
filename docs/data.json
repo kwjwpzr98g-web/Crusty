@@ -2,59 +2,70 @@
   "name": "TALON",
   "mode": "PAPER ONLY",
   "status": "SCANNING",
-  "updated": "2026-11-13T01:50:53Z",
-  "last_data": "2026-11-13T01:00:00Z",
-  "equity": 9300.4,
-  "pnl": -699.6,
-  "cash": 7442.89,
-  "drawdown": 7.1,
-  "completed": 38,
+  "updated": "2026-11-13T09:34:45Z",
+  "last_data": "2026-11-13T09:00:00Z",
+  "equity": 9343.88,
+  "pnl": -656.12,
+  "cash": 7473.85,
+  "drawdown": 6.66,
+  "completed": 39,
   "position": {
-    "symbol": "SOL",
+    "symbol": "ETH",
     "side": "SHORT",
-    "entry": 81.24867,
-    "qty": 22.924503223768948,
-    "stop": 82.4533842857143,
-    "target": 78.83924142857143,
-    "margin": 1862.5853973419396,
-    "entry_fee": 7.450341589367759,
-    "at": "2026-11-12T14:00:00Z",
-    "entry_t": 1794488400,
-    "bars": 11
+    "entry": 1930.6873799999998,
+    "qty": 0.9687397051873063,
+    "stop": 1965.5829514285713,
+    "target": 1860.896237142857,
+    "margin": 1870.3335233100527,
+    "entry_fee": 7.481334093240211,
+    "at": "2026-11-13T04:00:00Z",
+    "entry_t": 1794538800,
+    "bars": 5
   },
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 71041.1,
-      "candle": "2026-11-13T01:00:00Z",
+      "price": 68650.1,
+      "candle": "2026-11-13T09:00:00Z",
       "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 2008.97,
-      "candle": "2026-11-13T01:00:00Z",
+      "price": 1931.0,
+      "candle": "2026-11-13T09:00:00Z",
       "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 81.47,
-      "candle": "2026-11-13T01:00:00Z",
+      "price": 79.7,
+      "candle": "2026-11-13T09:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 655.79,
-      "candle": "2026-11-13T01:00:00Z",
+      "price": 630.52,
+      "candle": "2026-11-13T09:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 73.1,
-      "candle": "2026-11-13T01:00:00Z",
+      "price": 71.85,
+      "candle": "2026-11-13T09:00:00Z",
       "signal": "WAIT"
     }
   },
   "trades": [
+    {
+      "symbol": "SOL",
+      "side": "SHORT",
+      "entry": 81.24867,
+      "exit": 78.91808067,
+      "qty": 22.924503223768948,
+      "entered": "2026-11-12T14:00:00Z",
+      "exited": "2026-11-13T04:00:00Z",
+      "pnl": 38.7406,
+      "reason": "TARGET"
+    },
     {
       "symbol": "BNB",
       "side": "SHORT",
@@ -475,38 +486,6 @@
     }
   ],
   "history": [
-    {
-      "t": 1792731600,
-      "equity": 9672.7723
-    },
-    {
-      "t": 1792735200,
-      "equity": 9660.1767
-    },
-    {
-      "t": 1792738800,
-      "equity": 9660.1767
-    },
-    {
-      "t": 1792742400,
-      "equity": 9660.1767
-    },
-    {
-      "t": 1792746000,
-      "equity": 9660.1767
-    },
-    {
-      "t": 1792749600,
-      "equity": 9660.1767
-    },
-    {
-      "t": 1792753200,
-      "equity": 9660.1767
-    },
-    {
-      "t": 1792756800,
-      "equity": 9660.1767
-    },
     {
       "t": 1792760400,
       "equity": 9660.1767
@@ -2474,10 +2453,52 @@
     {
       "t": 1794528000,
       "equity": 9300.4028
+    },
+    {
+      "t": 1794531600,
+      "equity": 9306.5924
+    },
+    {
+      "t": 1794535200,
+      "equity": 9331.3508
+    },
+    {
+      "t": 1794538800,
+      "equity": 9342.3141
+    },
+    {
+      "t": 1794542400,
+      "equity": 9351.2168
+    },
+    {
+      "t": 1794546000,
+      "equity": 9364.4304
+    },
+    {
+      "t": 1794549600,
+      "equity": 9337.6641
+    },
+    {
+      "t": 1794553200,
+      "equity": 9342.5466
+    },
+    {
+      "t": 1794556800,
+      "equity": 9343.8834
     }
   ],
   "errors": {},
   "events": [
+    {
+      "at": "2026-11-13T04:00:00Z",
+      "kind": "ENTRY",
+      "message": "PAPER SHORT ETH"
+    },
+    {
+      "at": "2026-11-13T04:00:00Z",
+      "kind": "EXIT",
+      "message": "PAPER SHORT SOL TARGET"
+    },
     {
       "at": "2026-11-12T14:00:00Z",
       "kind": "ENTRY",
@@ -2617,16 +2638,6 @@
       "at": "2026-11-03T14:00:00Z",
       "kind": "EXIT",
       "message": "PAPER SHORT SOL STOP"
-    },
-    {
-      "at": "2026-11-02T18:00:00Z",
-      "kind": "ENTRY",
-      "message": "PAPER SHORT SOL"
-    },
-    {
-      "at": "2026-11-02T09:00:00Z",
-      "kind": "EXIT",
-      "message": "PAPER SHORT HYPE STOP"
     }
   ],
   "lock_reason": null,
