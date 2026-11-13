@@ -1,12 +1,12 @@
 {
   "mode": "PAPER ONLY",
   "cash": 7442.89124777839,
-  "equity": 9298.798049596147,
+  "equity": 9300.402764821813,
   "peak": 10011.095846933435,
   "initial": 10000.0,
-  "day_start": 9295.776366086953,
-  "day": "2026-11-12",
-  "last_ts": 1794510000,
+  "day_start": 9296.964089338246,
+  "day": "2026-11-13",
+  "last_ts": 1794528000,
   "position": {
     "symbol": "SOL",
     "side": "SHORT",
@@ -18,7 +18,7 @@
     "entry_fee": 7.450341589367759,
     "at": "2026-11-12T14:00:00Z",
     "entry_t": 1794488400,
-    "bars": 6
+    "bars": 11
   },
   "trades": [
     {
@@ -3516,6 +3516,26 @@
     {
       "t": 1794510000,
       "equity": 9298.798
+    },
+    {
+      "t": 1794513600,
+      "equity": 9306.1339
+    },
+    {
+      "t": 1794517200,
+      "equity": 9304.0707
+    },
+    {
+      "t": 1794520800,
+      "equity": 9303.1537
+    },
+    {
+      "t": 1794524400,
+      "equity": 9296.9641
+    },
+    {
+      "t": 1794528000,
+      "equity": 9300.4028
     }
   ],
   "events": [
@@ -3823,32 +3843,32 @@
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 71601.8,
-      "candle": "2026-11-12T20:00:00Z",
+      "price": 71041.1,
+      "candle": "2026-11-13T01:00:00Z",
       "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 2015.23,
-      "candle": "2026-11-12T20:00:00Z",
+      "price": 2008.97,
+      "candle": "2026-11-13T01:00:00Z",
       "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 81.54,
-      "candle": "2026-11-12T20:00:00Z",
+      "price": 81.47,
+      "candle": "2026-11-13T01:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 655.19,
-      "candle": "2026-11-12T20:00:00Z",
+      "price": 655.79,
+      "candle": "2026-11-13T01:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 71.54,
-      "candle": "2026-11-12T20:00:00Z",
+      "price": 73.1,
+      "candle": "2026-11-13T01:00:00Z",
       "signal": "WAIT"
     }
   },
@@ -3856,6 +3876,6 @@
   "paused": false,
   "locked": false,
   "lock_reason": null,
-  "last_scan": "2026-11-12T20:50:23Z",
-  "last_data": "2026-11-12T20:00:00Z"
+  "last_scan": "2026-11-13T01:50:53Z",
+  "last_data": "2026-11-13T01:00:00Z"
 }
