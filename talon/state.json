@@ -6,7 +6,7 @@
   "initial": 10000.0,
   "day_start": 9341.16789170868,
   "day": "2026-11-15",
-  "last_ts": 1794733200,
+  "last_ts": 1794758400,
   "position": null,
   "trades": [
     {
@@ -3818,6 +3818,34 @@
     {
       "t": 1794733200,
       "equity": 9278.9535
+    },
+    {
+      "t": 1794736800,
+      "equity": 9278.9535
+    },
+    {
+      "t": 1794740400,
+      "equity": 9278.9535
+    },
+    {
+      "t": 1794744000,
+      "equity": 9278.9535
+    },
+    {
+      "t": 1794747600,
+      "equity": 9278.9535
+    },
+    {
+      "t": 1794751200,
+      "equity": 9278.9535
+    },
+    {
+      "t": 1794754800,
+      "equity": 9278.9535
+    },
+    {
+      "t": 1794758400,
+      "equity": 9278.9535
     }
   ],
   "events": [
@@ -4125,32 +4153,32 @@
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 65310.7,
-      "candle": "2026-11-15T10:00:00Z",
+      "price": 64663.5,
+      "candle": "2026-11-15T17:00:00Z",
       "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 1821.55,
-      "candle": "2026-11-15T10:00:00Z",
+      "price": 1813.98,
+      "candle": "2026-11-15T17:00:00Z",
       "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 71.69,
-      "candle": "2026-11-15T10:00:00Z",
+      "price": 71.38,
+      "candle": "2026-11-15T17:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 595.24,
-      "candle": "2026-11-15T10:00:00Z",
+      "price": 591.49,
+      "candle": "2026-11-15T17:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 67.72,
-      "candle": "2026-11-15T10:00:00Z",
+      "price": 66.88,
+      "candle": "2026-11-15T17:00:00Z",
       "signal": "WAIT"
     }
   },
@@ -4158,6 +4186,6 @@
   "paused": false,
   "locked": false,
   "lock_reason": null,
-  "last_scan": "2026-11-15T10:58:10Z",
-  "last_data": "2026-11-15T10:00:00Z"
+  "last_scan": "2026-11-15T17:44:29Z",
+  "last_data": "2026-11-15T17:00:00Z"
 }
