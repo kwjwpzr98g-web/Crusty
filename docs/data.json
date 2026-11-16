@@ -2,47 +2,58 @@
   "name": "TALON",
   "mode": "PAPER ONLY",
   "status": "SCANNING",
-  "updated": "2026-11-16T11:25:46Z",
-  "last_data": "2026-11-16T11:00:00Z",
-  "equity": 9278.95,
-  "pnl": -721.05,
-  "cash": 9278.95,
-  "drawdown": 7.31,
-  "completed": 44,
+  "updated": "2026-11-16T22:07:27Z",
+  "last_data": "2026-11-16T22:00:00Z",
+  "equity": 9214.08,
+  "pnl": -785.92,
+  "cash": 9214.08,
+  "drawdown": 7.96,
+  "completed": 45,
   "position": null,
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 64509.3,
-      "candle": "2026-11-16T11:00:00Z",
+      "price": 65249.0,
+      "candle": "2026-11-16T22:00:00Z",
       "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 1807.15,
-      "candle": "2026-11-16T11:00:00Z",
+      "price": 1827.86,
+      "candle": "2026-11-16T22:00:00Z",
       "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 71.6,
-      "candle": "2026-11-16T11:00:00Z",
+      "price": 71.9,
+      "candle": "2026-11-16T22:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 590.87,
-      "candle": "2026-11-16T11:00:00Z",
+      "price": 593.51,
+      "candle": "2026-11-16T22:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 67.48,
-      "candle": "2026-11-16T11:00:00Z",
+      "price": 70.09,
+      "candle": "2026-11-16T22:00:00Z",
       "signal": "WAIT"
     }
   },
   "trades": [
+    {
+      "symbol": "HYPE",
+      "side": "SHORT",
+      "entry": 65.21472,
+      "exit": 66.96590471999998,
+      "qty": 28.456622886964407,
+      "entered": "2026-11-16T13:00:00Z",
+      "exited": "2026-11-16T15:00:00Z",
+      "pnl": -64.8785,
+      "reason": "STOP"
+    },
     {
       "symbol": "BTC",
       "side": "SHORT",
@@ -529,50 +540,6 @@
     }
   ],
   "history": [
-    {
-      "t": 1793026800,
-      "equity": 9622.1023
-    },
-    {
-      "t": 1793030400,
-      "equity": 9622.1023
-    },
-    {
-      "t": 1793034000,
-      "equity": 9654.859
-    },
-    {
-      "t": 1793037600,
-      "equity": 9634.6631
-    },
-    {
-      "t": 1793041200,
-      "equity": 9626.0429
-    },
-    {
-      "t": 1793044800,
-      "equity": 9603.1379
-    },
-    {
-      "t": 1793048400,
-      "equity": 9604.6156
-    },
-    {
-      "t": 1793052000,
-      "equity": 9608.8026
-    },
-    {
-      "t": 1793055600,
-      "equity": 9618.6542
-    },
-    {
-      "t": 1793059200,
-      "equity": 9627.0281
-    },
-    {
-      "t": 1793062800,
-      "equity": 9617.4228
-    },
     {
       "t": 1793066400,
       "equity": 9608.31
@@ -2528,10 +2495,64 @@
     {
       "t": 1794823200,
       "equity": 9278.9535
+    },
+    {
+      "t": 1794826800,
+      "equity": 9278.9535
+    },
+    {
+      "t": 1794830400,
+      "equity": 9269.6727
+    },
+    {
+      "t": 1794834000,
+      "equity": 9258.5746
+    },
+    {
+      "t": 1794837600,
+      "equity": 9214.075
+    },
+    {
+      "t": 1794841200,
+      "equity": 9214.075
+    },
+    {
+      "t": 1794844800,
+      "equity": 9214.075
+    },
+    {
+      "t": 1794848400,
+      "equity": 9214.075
+    },
+    {
+      "t": 1794852000,
+      "equity": 9214.075
+    },
+    {
+      "t": 1794855600,
+      "equity": 9214.075
+    },
+    {
+      "t": 1794859200,
+      "equity": 9214.075
+    },
+    {
+      "t": 1794862800,
+      "equity": 9214.075
     }
   ],
   "errors": {},
   "events": [
+    {
+      "at": "2026-11-16T15:00:00Z",
+      "kind": "EXIT",
+      "message": "PAPER SHORT HYPE STOP"
+    },
+    {
+      "at": "2026-11-16T13:00:00Z",
+      "kind": "ENTRY",
+      "message": "PAPER SHORT HYPE"
+    },
     {
       "at": "2026-11-15T03:00:00Z",
       "kind": "EXIT",
@@ -2671,16 +2692,6 @@
       "at": "2026-11-07T16:00:00Z",
       "kind": "ENTRY",
       "message": "PAPER SHORT HYPE"
-    },
-    {
-      "at": "2026-11-07T10:00:00Z",
-      "kind": "EXIT",
-      "message": "PAPER SHORT ETH TIME"
-    },
-    {
-      "at": "2026-11-05T22:00:00Z",
-      "kind": "ENTRY",
-      "message": "PAPER SHORT ETH"
     }
   ],
   "lock_reason": null,
