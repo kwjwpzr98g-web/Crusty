@@ -1,25 +1,13 @@
 {
   "mode": "PAPER ONLY",
-  "cash": 7290.988174641306,
-  "equity": 9090.197347262496,
+  "cash": 9020.012141580568,
+  "equity": 9020.012141580568,
   "peak": 10011.095846933435,
   "initial": 10000.0,
   "day_start": 9113.7370410505,
   "day": "2026-11-18",
-  "last_ts": 1795006800,
-  "position": {
-    "symbol": "SOL",
-    "side": "LONG",
-    "entry": 75.18511,
-    "qty": 24.267725554642432,
-    "stop": 73.25010999999999,
-    "target": 79.05511,
-    "margin": 1824.5716152756022,
-    "entry_fee": 7.298286461102409,
-    "at": "2026-11-18T00:00:00Z",
-    "entry_t": 1794956400,
-    "bars": 14
-  },
+  "last_ts": 1795032000,
+  "position": null,
   "trades": [
     {
       "symbol": "HYPE",
@@ -536,6 +524,28 @@
       "entered": "2026-11-17T16:00:00Z",
       "exited": "2026-11-17T22:00:00Z",
       "pnl": -48.7954,
+      "reason": "STOP"
+    },
+    {
+      "symbol": "SOL",
+      "side": "LONG",
+      "entry": 75.18511,
+      "exit": 73.17685988999999,
+      "qty": 24.267725554642432,
+      "entered": "2026-11-18T00:00:00Z",
+      "exited": "2026-11-18T16:00:00Z",
+      "pnl": -63.1373,
+      "reason": "STOP"
+    },
+    {
+      "symbol": "BTC",
+      "side": "SHORT",
+      "entry": 62633.1042,
+      "exit": 63501.167644199995,
+      "qty": 0.028929496308092304,
+      "entered": "2026-11-18T17:00:00Z",
+      "exited": "2026-11-18T18:00:00Z",
+      "pnl": -39.7086,
       "reason": "STOP"
     }
   ],
@@ -4167,24 +4177,37 @@
     {
       "t": 1795006800,
       "equity": 9090.1973
+    },
+    {
+      "t": 1795010400,
+      "equity": 9088.7413
+    },
+    {
+      "t": 1795014000,
+      "equity": 9059.7208
+    },
+    {
+      "t": 1795017600,
+      "equity": 9050.6592
+    },
+    {
+      "t": 1795021200,
+      "equity": 9020.0121
+    },
+    {
+      "t": 1795024800,
+      "equity": 9020.0121
+    },
+    {
+      "t": 1795028400,
+      "equity": 9020.0121
+    },
+    {
+      "t": 1795032000,
+      "equity": 9020.0121
     }
   ],
   "events": [
-    {
-      "at": "2026-10-29T17:00:00Z",
-      "kind": "EXIT",
-      "message": "PAPER LONG HYPE TARGET"
-    },
-    {
-      "at": "2026-10-29T17:00:00Z",
-      "kind": "ENTRY",
-      "message": "PAPER LONG HYPE"
-    },
-    {
-      "at": "2026-10-29T18:00:00Z",
-      "kind": "EXIT",
-      "message": "PAPER LONG HYPE STOP"
-    },
     {
       "at": "2026-10-29T21:00:00Z",
       "kind": "ENTRY",
@@ -4469,37 +4492,52 @@
       "at": "2026-11-18T00:00:00Z",
       "kind": "ENTRY",
       "message": "PAPER LONG SOL"
+    },
+    {
+      "at": "2026-11-18T16:00:00Z",
+      "kind": "EXIT",
+      "message": "PAPER LONG SOL STOP"
+    },
+    {
+      "at": "2026-11-18T17:00:00Z",
+      "kind": "ENTRY",
+      "message": "PAPER SHORT BTC"
+    },
+    {
+      "at": "2026-11-18T18:00:00Z",
+      "kind": "EXIT",
+      "message": "PAPER SHORT BTC STOP"
     }
   ],
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 63864.8,
-      "candle": "2026-11-18T14:00:00Z",
+      "price": 62539.3,
+      "candle": "2026-11-18T21:00:00Z",
       "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 1788.48,
-      "candle": "2026-11-18T14:00:00Z",
+      "price": 1751.71,
+      "candle": "2026-11-18T21:00:00Z",
       "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 74.14,
-      "candle": "2026-11-18T14:00:00Z",
+      "price": 72.96,
+      "candle": "2026-11-18T21:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 588.28,
-      "candle": "2026-11-18T14:00:00Z",
+      "price": 578.03,
+      "candle": "2026-11-18T21:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 67.78,
-      "candle": "2026-11-18T14:00:00Z",
+      "price": 66.71,
+      "candle": "2026-11-18T21:00:00Z",
       "signal": "WAIT"
     }
   },
@@ -4507,6 +4545,6 @@
   "paused": false,
   "locked": false,
   "lock_reason": null,
-  "last_scan": "2026-11-18T14:02:13Z",
-  "last_data": "2026-11-18T14:00:00Z"
+  "last_scan": "2026-11-18T21:58:45Z",
+  "last_data": "2026-11-18T21:00:00Z"
 }
