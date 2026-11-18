@@ -2,43 +2,55 @@
   "name": "TALON",
   "mode": "PAPER ONLY",
   "status": "SCANNING",
-  "updated": "2026-11-17T22:54:19Z",
-  "last_data": "2026-11-17T22:00:00Z",
-  "equity": 9122.86,
-  "pnl": -877.14,
-  "cash": 9122.86,
-  "drawdown": 8.87,
+  "updated": "2026-11-18T04:25:27Z",
+  "last_data": "2026-11-18T04:00:00Z",
+  "equity": 9104.03,
+  "pnl": -895.97,
+  "cash": 7290.99,
+  "drawdown": 9.06,
   "completed": 47,
-  "position": null,
+  "position": {
+    "symbol": "SOL",
+    "side": "LONG",
+    "entry": 75.18511,
+    "qty": 24.267725554642432,
+    "stop": 73.25010999999999,
+    "target": 79.05511,
+    "margin": 1824.5716152756022,
+    "entry_fee": 7.298286461102409,
+    "at": "2026-11-18T00:00:00Z",
+    "entry_t": 1794956400,
+    "bars": 4
+  },
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 64289.6,
-      "candle": "2026-11-17T22:00:00Z",
+      "price": 64382.4,
+      "candle": "2026-11-18T04:00:00Z",
       "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 1804.28,
-      "candle": "2026-11-17T22:00:00Z",
+      "price": 1803.21,
+      "candle": "2026-11-18T04:00:00Z",
       "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 73.44,
-      "candle": "2026-11-17T22:00:00Z",
+      "price": 74.71,
+      "candle": "2026-11-18T04:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 590.42,
-      "candle": "2026-11-17T22:00:00Z",
+      "price": 591.19,
+      "candle": "2026-11-18T04:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 68.75,
-      "candle": "2026-11-17T22:00:00Z",
+      "price": 68.62,
+      "candle": "2026-11-18T04:00:00Z",
       "signal": "WAIT"
     }
   },
@@ -562,30 +574,6 @@
     }
   ],
   "history": [
-    {
-      "t": 1793152800,
-      "equity": 9676.3804
-    },
-    {
-      "t": 1793156400,
-      "equity": 9675.667
-    },
-    {
-      "t": 1793160000,
-      "equity": 9676.1426
-    },
-    {
-      "t": 1793163600,
-      "equity": 9671.6245
-    },
-    {
-      "t": 1793167200,
-      "equity": 9667.5819
-    },
-    {
-      "t": 1793170800,
-      "equity": 9669.0087
-    },
     {
       "t": 1793174400,
       "equity": 9681.6119
@@ -2561,10 +2549,39 @@
     {
       "t": 1794949200,
       "equity": 9122.8581
+    },
+    {
+      "t": 1794952800,
+      "equity": 9122.8581
+    },
+    {
+      "t": 1794956400,
+      "equity": 9113.737
+    },
+    {
+      "t": 1794960000,
+      "equity": 9108.8835
+    },
+    {
+      "t": 1794963600,
+      "equity": 9089.9547
+    },
+    {
+      "t": 1794967200,
+      "equity": 9097.7203
+    },
+    {
+      "t": 1794970800,
+      "equity": 9104.03
     }
   ],
   "errors": {},
   "events": [
+    {
+      "at": "2026-11-18T00:00:00Z",
+      "kind": "ENTRY",
+      "message": "PAPER LONG SOL"
+    },
     {
       "at": "2026-11-17T22:00:00Z",
       "kind": "EXIT",
@@ -2709,11 +2726,6 @@
       "at": "2026-11-08T23:00:00Z",
       "kind": "EXIT",
       "message": "PAPER SHORT ETH STOP"
-    },
-    {
-      "at": "2026-11-08T22:00:00Z",
-      "kind": "ENTRY",
-      "message": "PAPER SHORT ETH"
     }
   ],
   "lock_reason": null,
