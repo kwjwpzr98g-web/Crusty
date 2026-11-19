@@ -1,48 +1,59 @@
 {
   "name": "TALON",
   "mode": "PAPER ONLY",
-  "status": "SCANNING",
-  "updated": "2026-11-19T13:14:05Z",
-  "last_data": "2026-11-19T13:00:00Z",
-  "equity": 9020.01,
-  "pnl": -979.99,
-  "cash": 9020.01,
-  "drawdown": 9.9,
-  "completed": 49,
+  "status": "RISK LOCK",
+  "updated": "2026-11-19T21:38:35Z",
+  "last_data": "2026-11-19T21:00:00Z",
+  "equity": 8974.36,
+  "pnl": -1025.64,
+  "cash": 8974.36,
+  "drawdown": 10.36,
+  "completed": 50,
   "position": null,
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 63808.5,
-      "candle": "2026-11-19T13:00:00Z",
-      "signal": "WAIT"
+      "price": 62055.0,
+      "candle": "2026-11-19T21:00:00Z",
+      "signal": "SHORT"
     },
     "ETH": {
       "status": "READY",
-      "price": 1804.06,
-      "candle": "2026-11-19T13:00:00Z",
+      "price": 1759.2,
+      "candle": "2026-11-19T21:00:00Z",
       "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 74.77,
-      "candle": "2026-11-19T13:00:00Z",
+      "price": 73.02,
+      "candle": "2026-11-19T21:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 591.88,
-      "candle": "2026-11-19T13:00:00Z",
+      "price": 580.62,
+      "candle": "2026-11-19T21:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 68.9,
-      "candle": "2026-11-19T13:00:00Z",
+      "price": 67.72,
+      "candle": "2026-11-19T21:00:00Z",
       "signal": "WAIT"
     }
   },
   "trades": [
+    {
+      "symbol": "HYPE",
+      "side": "LONG",
+      "entry": 69.10904,
+      "exit": 67.90834938857142,
+      "qty": 26.103711299073378,
+      "entered": "2026-11-19T15:00:00Z",
+      "exited": "2026-11-19T16:00:00Z",
+      "pnl": -45.6491,
+      "reason": "STOP"
+    },
     {
       "symbol": "BTC",
       "side": "SHORT",
@@ -584,38 +595,6 @@
     }
   ],
   "history": [
-    {
-      "t": 1793293200,
-      "equity": 9723.3997
-    },
-    {
-      "t": 1793296800,
-      "equity": 9723.3997
-    },
-    {
-      "t": 1793300400,
-      "equity": 9723.3997
-    },
-    {
-      "t": 1793304000,
-      "equity": 9713.6744
-    },
-    {
-      "t": 1793307600,
-      "equity": 9679.8776
-    },
-    {
-      "t": 1793311200,
-      "equity": 9679.8776
-    },
-    {
-      "t": 1793314800,
-      "equity": 9670.1958
-    },
-    {
-      "t": 1793318400,
-      "equity": 9688.3494
-    },
     {
       "t": 1793322000,
       "equity": 9699.0428
@@ -2583,10 +2562,57 @@
     {
       "t": 1795089600,
       "equity": 9020.0121
+    },
+    {
+      "t": 1795093200,
+      "equity": 9020.0121
+    },
+    {
+      "t": 1795096800,
+      "equity": 9010.9939
+    },
+    {
+      "t": 1795100400,
+      "equity": 8974.363
+    },
+    {
+      "t": 1795104000,
+      "equity": 8974.363
+    },
+    {
+      "t": 1795107600,
+      "equity": 8974.363
+    },
+    {
+      "t": 1795111200,
+      "equity": 8974.363
+    },
+    {
+      "t": 1795114800,
+      "equity": 8974.363
+    },
+    {
+      "t": 1795118400,
+      "equity": 8974.363
     }
   ],
   "errors": {},
   "events": [
+    {
+      "at": "2026-11-19T16:00:00Z",
+      "kind": "RISK",
+      "message": "Risk lock: DRAWDOWN"
+    },
+    {
+      "at": "2026-11-19T16:00:00Z",
+      "kind": "EXIT",
+      "message": "PAPER LONG HYPE STOP"
+    },
+    {
+      "at": "2026-11-19T15:00:00Z",
+      "kind": "ENTRY",
+      "message": "PAPER LONG HYPE"
+    },
     {
       "at": "2026-11-18T18:00:00Z",
       "kind": "EXIT",
@@ -2721,24 +2747,9 @@
       "at": "2026-11-10T16:00:00Z",
       "kind": "EXIT",
       "message": "PAPER SHORT ETH STOP"
-    },
-    {
-      "at": "2026-11-10T14:00:00Z",
-      "kind": "ENTRY",
-      "message": "PAPER SHORT ETH"
-    },
-    {
-      "at": "2026-11-10T14:00:00Z",
-      "kind": "EXIT",
-      "message": "PAPER SHORT ETH TARGET"
-    },
-    {
-      "at": "2026-11-10T10:00:00Z",
-      "kind": "ENTRY",
-      "message": "PAPER SHORT ETH"
     }
   ],
-  "lock_reason": null,
+  "lock_reason": "DRAWDOWN",
   "paused": false,
   "settings": {
     "symbols": [

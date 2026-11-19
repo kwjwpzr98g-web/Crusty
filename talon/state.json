@@ -1,12 +1,12 @@
 {
   "mode": "PAPER ONLY",
-  "cash": 9020.012141580568,
-  "equity": 9020.012141580568,
+  "cash": 8974.36301099812,
+  "equity": 8974.36301099812,
   "peak": 10011.095846933435,
   "initial": 10000.0,
   "day_start": 9020.012141580568,
   "day": "2026-11-19",
-  "last_ts": 1795089600,
+  "last_ts": 1795118400,
   "position": null,
   "trades": [
     {
@@ -546,6 +546,17 @@
       "entered": "2026-11-18T17:00:00Z",
       "exited": "2026-11-18T18:00:00Z",
       "pnl": -39.7086,
+      "reason": "STOP"
+    },
+    {
+      "symbol": "HYPE",
+      "side": "LONG",
+      "entry": 69.10904,
+      "exit": 67.90834938857142,
+      "qty": 26.103711299073378,
+      "entered": "2026-11-19T15:00:00Z",
+      "exited": "2026-11-19T16:00:00Z",
+      "pnl": -45.6491,
       "reason": "STOP"
     }
   ],
@@ -4269,24 +4280,41 @@
     {
       "t": 1795089600,
       "equity": 9020.0121
+    },
+    {
+      "t": 1795093200,
+      "equity": 9020.0121
+    },
+    {
+      "t": 1795096800,
+      "equity": 9010.9939
+    },
+    {
+      "t": 1795100400,
+      "equity": 8974.363
+    },
+    {
+      "t": 1795104000,
+      "equity": 8974.363
+    },
+    {
+      "t": 1795107600,
+      "equity": 8974.363
+    },
+    {
+      "t": 1795111200,
+      "equity": 8974.363
+    },
+    {
+      "t": 1795114800,
+      "equity": 8974.363
+    },
+    {
+      "t": 1795118400,
+      "equity": 8974.363
     }
   ],
   "events": [
-    {
-      "at": "2026-10-29T21:00:00Z",
-      "kind": "ENTRY",
-      "message": "PAPER SHORT BNB"
-    },
-    {
-      "at": "2026-10-29T22:00:00Z",
-      "kind": "EXIT",
-      "message": "PAPER SHORT BNB STOP"
-    },
-    {
-      "at": "2026-10-30T00:00:00Z",
-      "kind": "ENTRY",
-      "message": "PAPER SHORT BTC"
-    },
     {
       "at": "2026-10-31T12:00:00Z",
       "kind": "EXIT",
@@ -4571,44 +4599,59 @@
       "at": "2026-11-18T18:00:00Z",
       "kind": "EXIT",
       "message": "PAPER SHORT BTC STOP"
+    },
+    {
+      "at": "2026-11-19T15:00:00Z",
+      "kind": "ENTRY",
+      "message": "PAPER LONG HYPE"
+    },
+    {
+      "at": "2026-11-19T16:00:00Z",
+      "kind": "EXIT",
+      "message": "PAPER LONG HYPE STOP"
+    },
+    {
+      "at": "2026-11-19T16:00:00Z",
+      "kind": "RISK",
+      "message": "Risk lock: DRAWDOWN"
     }
   ],
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 63808.5,
-      "candle": "2026-11-19T13:00:00Z",
-      "signal": "WAIT"
+      "price": 62055.0,
+      "candle": "2026-11-19T21:00:00Z",
+      "signal": "SHORT"
     },
     "ETH": {
       "status": "READY",
-      "price": 1804.06,
-      "candle": "2026-11-19T13:00:00Z",
+      "price": 1759.2,
+      "candle": "2026-11-19T21:00:00Z",
       "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 74.77,
-      "candle": "2026-11-19T13:00:00Z",
+      "price": 73.02,
+      "candle": "2026-11-19T21:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 591.88,
-      "candle": "2026-11-19T13:00:00Z",
+      "price": 580.62,
+      "candle": "2026-11-19T21:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 68.9,
-      "candle": "2026-11-19T13:00:00Z",
+      "price": 67.72,
+      "candle": "2026-11-19T21:00:00Z",
       "signal": "WAIT"
     }
   },
   "errors": {},
   "paused": false,
-  "locked": false,
-  "lock_reason": null,
-  "last_scan": "2026-11-19T13:14:05Z",
-  "last_data": "2026-11-19T13:00:00Z"
+  "locked": true,
+  "lock_reason": "DRAWDOWN",
+  "last_scan": "2026-11-19T21:38:35Z",
+  "last_data": "2026-11-19T21:00:00Z"
 }
