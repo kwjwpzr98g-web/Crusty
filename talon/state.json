@@ -4,9 +4,9 @@
   "equity": 8974.36301099812,
   "peak": 10011.095846933435,
   "initial": 10000.0,
-  "day_start": 9020.012141580568,
-  "day": "2026-11-19",
-  "last_ts": 1795118400,
+  "day_start": 8974.36301099812,
+  "day": "2026-11-20",
+  "last_ts": 1795140000,
   "position": null,
   "trades": [
     {
@@ -4312,6 +4312,30 @@
     {
       "t": 1795118400,
       "equity": 8974.363
+    },
+    {
+      "t": 1795122000,
+      "equity": 8974.363
+    },
+    {
+      "t": 1795125600,
+      "equity": 8974.363
+    },
+    {
+      "t": 1795129200,
+      "equity": 8974.363
+    },
+    {
+      "t": 1795132800,
+      "equity": 8974.363
+    },
+    {
+      "t": 1795136400,
+      "equity": 8974.363
+    },
+    {
+      "t": 1795140000,
+      "equity": 8974.363
     }
   ],
   "events": [
@@ -4619,32 +4643,32 @@
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 62055.0,
-      "candle": "2026-11-19T21:00:00Z",
-      "signal": "SHORT"
+      "price": 62199.9,
+      "candle": "2026-11-20T03:00:00Z",
+      "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 1759.2,
-      "candle": "2026-11-19T21:00:00Z",
+      "price": 1747.57,
+      "candle": "2026-11-20T03:00:00Z",
       "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 73.02,
-      "candle": "2026-11-19T21:00:00Z",
+      "price": 72.88,
+      "candle": "2026-11-20T03:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 580.62,
-      "candle": "2026-11-19T21:00:00Z",
+      "price": 574.63,
+      "candle": "2026-11-20T03:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 67.72,
-      "candle": "2026-11-19T21:00:00Z",
+      "price": 66.04,
+      "candle": "2026-11-20T03:00:00Z",
       "signal": "WAIT"
     }
   },
@@ -4652,6 +4676,6 @@
   "paused": false,
   "locked": true,
   "lock_reason": "DRAWDOWN",
-  "last_scan": "2026-11-19T21:38:35Z",
-  "last_data": "2026-11-19T21:00:00Z"
+  "last_scan": "2026-11-20T03:19:35Z",
+  "last_data": "2026-11-20T03:00:00Z"
 }
