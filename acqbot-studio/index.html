@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AcqBot Studio | Aerospace Platforms</title>
+<meta name="description" content="Turn AcqBot exports into reviewed public topic narratives and SPN coordination drafts.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<script defer src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script defer src="./app.js"></script>
+<link rel="stylesheet" href="./style.css">
+</head><body>
+<header class="head"><div class="brand"><span class="logo">A</span><span>ACQBOT <b>STUDIO</b></span></div><div class="headright"><span class="chip">AEROSPACE PLATFORMS</span><span class="chip pale">Draft workspace</span></div></header>
+<main>
+<div class="hero"><div class="eyebrow">AFWERX / AEROSPACE PLATFORMS</div><h1>From export to<br><em>publication package.</em></h1><p>Import an AcqBot record. Generate a clean, public-facing SBIR/STTR topic and a separate SPN coordination draft. Review source fields, fill gaps, and download both.</p></div>
+<div class="steps"><span><b>01</b> Upload</span><span><b>02</b> Map fields</span><span><b>03</b> Draft</span><span><b>04</b> Review & export</span></div>
+<div class="workspace">
+<section class="panel inputpanel">
+<div class="panelheading"><div><small>INTAKE / SOURCE</small><h2>Topic input</h2></div><button class="button soft sm" id="sample">Try sample</button></div>
+<div class="panelbody">
+<div class="drop" id="drop" tabindex="0" role="button" aria-label="Upload AcqBot export">
+<div class="uploadIcon">↥</div><h3>Drop your AcqBot export here</h3><p>Excel, CSV, PDF, JSON, TXT or Markdown</p><button id="browse" class="button dark">Choose file <span>↗</span></button><input id="file" type="file" hidden accept=".xls,.xlsx,.csv,.tsv,.pdf,.json,.txt,.md">
+</div>
+<div id="filebar" class="filebar hidden"><span style="font-size:22px">▤</span><div><strong id="filename"></strong><span id="filemeta"></span></div><span id="topicscount"></span></div>
+<p id="message" class="message" aria-live="polite">Drafts are generated in your browser. Your file is not uploaded to the application server.</p>
+<div class="divider"></div>
+<div class="subheading"><div><small>RECORD / DETAILS</small><h2>Verify the source</h2></div><select id="recordPicker" aria-label="Select imported topic"><option value="0">New topic</option></select></div>
+<div class="seg" id="editTabs"><button data-edit="public" class="on">Public narrative</button><button data-edit="admin">SPN & coordination</button><button data-edit="raw">Extracted source</button></div>
+<div id="publicFields" class="formgrid"></div><div id="adminFields" class="formgrid hidden"></div>
+<div id="rawPane" class="hidden"><label class="fieldlabel" for="raw">Source extract</label><textarea id="raw" readonly class="rawtext"></textarea></div>
+<div class="safety"><strong>Release control.</strong> Working drafts are not Distribution A approvals. Public release and DSIP publication still require the applicable PA, OPSEC, FDO, legal and contracting checks. This is an unrestricted-data prototype, not an authorized system for controlled or classified material.</div>
+</div>
+</section>
+<section class="panel previewpanel">
+<div class="panelheading"><div><small>OUTPUT / REVIEW</small><h2>Draft package</h2></div><span class="draftchip">WORKING DRAFT</span></div>
+<div class="panelbody">
+<div class="seg" id="previewTabs"><button data-preview="topic" class="on">Public topic</button><button data-preview="spn">SPN</button><button data-preview="review">QA checklist</button></div>
+<div id="paper" class="paper" contenteditable="true" spellcheck="true" role="textbox" aria-label="Editable document preview"></div>
+<div id="review" class="review hidden"></div>
+<div class="previewfoot"><span class="dot"></span><span>Editable preview · changes to the current document are retained until the source changes</span></div>
+<div class="actions">
+<button class="button dark" id="download">Download Word draft ↓</button>
+<button class="button" id="copy">Copy text</button>
+<button class="button" id="rebuild">Regenerate</button>
+<button class="button" id="both">Download both</button>
+</div>
+<p id="actionStatus" class="actionstatus" aria-live="polite"></p>
+</div>
+</section>
+</div>
+<footer>AcqBot Studio · Internal drafting workflow prototype · No submission, signature, or review status is represented as complete without supporting evidence.<br>Designed for AFWERX Aerospace Platforms. You remain responsible for validation and release coordination.</footer>
+</main>
+</body></html>
