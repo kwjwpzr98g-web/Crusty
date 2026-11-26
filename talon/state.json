@@ -5,8 +5,8 @@
   "peak": 10011.095846933435,
   "initial": 10000.0,
   "day_start": 8974.36301099812,
-  "day": "2026-11-25",
-  "last_ts": 1795644000,
+  "day": "2026-11-26",
+  "last_ts": 1795676400,
   "position": null,
   "trades": [
     {
@@ -4896,6 +4896,42 @@
     {
       "t": 1795644000,
       "equity": 8974.363
+    },
+    {
+      "t": 1795647600,
+      "equity": 8974.363
+    },
+    {
+      "t": 1795651200,
+      "equity": 8974.363
+    },
+    {
+      "t": 1795654800,
+      "equity": 8974.363
+    },
+    {
+      "t": 1795658400,
+      "equity": 8974.363
+    },
+    {
+      "t": 1795662000,
+      "equity": 8974.363
+    },
+    {
+      "t": 1795665600,
+      "equity": 8974.363
+    },
+    {
+      "t": 1795669200,
+      "equity": 8974.363
+    },
+    {
+      "t": 1795672800,
+      "equity": 8974.363
+    },
+    {
+      "t": 1795676400,
+      "equity": 8974.363
     }
   ],
   "events": [
@@ -5203,32 +5239,32 @@
   "markets": {
     "BTC": {
       "status": "READY",
-      "price": 60018.0,
-      "candle": "2026-11-25T23:00:00Z",
+      "price": 60454.9,
+      "candle": "2026-11-26T08:00:00Z",
       "signal": "WAIT"
     },
     "ETH": {
       "status": "READY",
-      "price": 1684.17,
-      "candle": "2026-11-25T23:00:00Z",
+      "price": 1687.84,
+      "candle": "2026-11-26T08:00:00Z",
       "signal": "WAIT"
     },
     "SOL": {
       "status": "READY",
-      "price": 70.45,
-      "candle": "2026-11-25T23:00:00Z",
+      "price": 70.76,
+      "candle": "2026-11-26T08:00:00Z",
       "signal": "WAIT"
     },
     "BNB": {
       "status": "READY",
-      "price": 550.89,
-      "candle": "2026-11-25T23:00:00Z",
+      "price": 553.64,
+      "candle": "2026-11-26T08:00:00Z",
       "signal": "WAIT"
     },
     "HYPE": {
       "status": "READY",
-      "price": 61.46,
-      "candle": "2026-11-25T23:00:00Z",
+      "price": 61.2,
+      "candle": "2026-11-26T08:00:00Z",
       "signal": "WAIT"
     }
   },
@@ -5236,6 +5272,6 @@
   "paused": false,
   "locked": true,
   "lock_reason": "DRAWDOWN",
-  "last_scan": "2026-11-25T23:39:04Z",
-  "last_data": "2026-11-25T23:00:00Z"
+  "last_scan": "2026-11-26T08:24:20Z",
+  "last_data": "2026-11-26T08:00:00Z"
 }
